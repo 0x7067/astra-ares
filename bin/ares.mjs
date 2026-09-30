@@ -10,13 +10,15 @@ import {
   readKey,
   validateConfig,
   readConfig,
+  binaryFor,
 } from "../src/config.mjs";
 import { verifyBinary } from "../src/launch.mjs";
 import { Jev } from "../src/jev.mjs";
 import { buildCodex, isCurrentManagedBuild } from "../scripts/build-codex.mjs";
+import { FLAVOR_META_FILES } from "../src/flavors.mjs";
 const help = `Astra-Ares — Adaptive Reasoning Effort Selection
 
-ares setup [--binary /path/to/patched/codex] [--provider vercel|typesafe|openrouter|local]
+ares setup [--binary /path/to/patched/codex] [--provider vercel|typesafe|openrouter|local] [--flavor latest|luna]
 ares configure [--provider vercel|typesafe|openrouter|local] [--key-stdin]
   [--base-url http://127.0.0.1:8890] [--decision-model model-id] [--context-token-limit 7000]
 ares doctor [--probe]
@@ -25,11 +27,15 @@ ares desktop install [--codex-home /path/to/profile]  # macOS
 ares desktop status
 ares desktop open --app /Applications/ChatGPT.app
 ares desktop uninstall
-astra-ares [ordinary Codex CLI arguments]
+astra-ares [--flavor latest|luna] [ordinary Codex CLI arguments]
 
 Config: $ARES_CONFIG or ~/.config/astra-ares/config.json
 Data:   $ARES_HOME or ~/.local/share/astra-ares
 setup builds an isolated pinned Codex. --binary adopts an already patched build.
+Two pinned flavors coexist: latest (Codex 0.159.2, Sol Ares -> gpt-6.1-sol) and
+luna (Codex 0.156.0-alpha.5, adds Luna Ares -> gpt-6-luna). setup without --flavor
+builds every missing flavor. astra-ares runs latest unless --flavor or ARES_FLAVOR
+selects luna.
 configure reads a key without echo; --key-stdin accepts a piped secret.
 New installations use OpenRouter. Existing configurations keep their provider.
 Vercel: AI_GATEWAY_API_KEY. Direct TypeSafe: TYPESAFE_API_KEY.
@@ -50,6 +56,7 @@ function parse(args) {
         "--context-token-limit",
         "--codex-home",
         "--app",
+        "--flavor",
       ].includes(arg) &&
       args[0] &&
       !args[0].startsWith("--")
@@ -102,6 +109,7 @@ try {
       "base-url",
       "decision-model",
       "context-token-limit",
+      "flavor",
     ],
     configure: [
       "provider",
@@ -158,31 +166,49 @@ try {
       : { provider: options.provider ?? "openrouter", maxLeaseSteps: 10 };
     applyEvaluatorOptions(config, options);
     validateConfig(config);
-    let needsBuild = false;
+    const builds = [];
     if (options.binary) {
       config.codexBinary = resolve(options.binary);
       verifyBinary(config.codexBinary);
-    } else {
+    } else if (config.codexBinary) {
       try {
-        verifyBinary(config.codexBinary ?? paths.binary);
+        verifyBinary(config.codexBinary);
       } catch (error) {
-        if (config.codexBinary)
+        throw new Error(
+          `Configured codexBinary is incompatible: ${error.message} Rebuild it and use setup --binary, or remove codexBinary from ${paths.config} to build the managed binary.`,
+        );
+      }
+    } else {
+      const flavors = options.flavor
+        ? [options.flavor]
+        : Object.keys(FLAVOR_META_FILES);
+      for (const flavor of flavors) {
+        const metaFile = FLAVOR_META_FILES[flavor];
+        if (!metaFile)
           throw new Error(
-            `Configured codexBinary is incompatible: ${error.message} Rebuild it and use setup --binary, or remove codexBinary from ${paths.config} to build the managed binary.`,
+            `Unknown --flavor ${flavor}; use latest or luna`,
           );
-        needsBuild = true;
+        const binary = binaryFor(paths.home, flavor);
+        let compatible = false;
+        try {
+          verifyBinary(binary, flavor);
+          compatible = true;
+        } catch {
+          // Missing or incompatible managed binaries are rebuilt below.
+        }
+        if (!compatible || !isCurrentManagedBuild(paths.home, metaFile))
+          builds.push([flavor, metaFile]);
       }
     }
-    if (!config.codexBinary && !isCurrentManagedBuild(paths.home))
-      needsBuild = true;
     // Persist setup's choices before the long build. A concurrent configure
     // command owns any later changes; never write this snapshot back afterward.
     saveConfig(paths.config, config);
-    if (needsBuild) {
-      console.log("Building the current native checkpoint...");
-      await buildCodex(paths.home);
+    for (const [flavor, metaFile] of builds) {
+      console.log(`Building the ${flavor} native checkpoint...`);
+      await buildCodex(paths.home, metaFile);
     }
-    verifyBinary(config.codexBinary ?? paths.binary);
+    for (const [flavor] of builds)
+      verifyBinary(binaryFor(paths.home, flavor), flavor);
     console.log(
       `Ready. Config: ${paths.config}\nSet your provider key with ares configure, or its environment variable.\nStart: astra-ares`,
     );
@@ -229,7 +255,9 @@ try {
     console.log(`Configuration saved privately in ${paths.config}`);
   } else if (command === "doctor") {
     const config = loadConfig();
-    verifyBinary(config.codexBinary ?? paths.binary);
+    verifyBinary(
+      config.codexBinary ?? binaryFor(paths.home, config.flavor ?? "latest"),
+    );
     const key = readKey(config);
     console.log(
       `Codex checkpoint: compatible\nProvider: ${config.provider}\nCredential: ${key ? "present" : "not configured (local service)"}\nConfig: ${paths.config}`,

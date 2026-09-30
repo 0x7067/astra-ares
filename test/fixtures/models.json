@@ -47,7 +47,8 @@
       "context_window": 272000,
       "max_context_window": 272000,
       "experimental_supported_tools": [],
-      "use_responses_lite": true
+      "use_responses_lite": true,
+      "supports_reasoning_effort_updates": true
     }
   ]
 }

@@ -1,0 +1,33 @@
+{
+  "repository": "https://github.com/openai/codex",
+  "commit": "6335046881f97f13703ce22e20c102fb88dad4da",
+  "release": "rust-v0.156.0-alpha.5",
+  "patchSha256": "b33720ecf7c60f14bf19265ea6d670bee341402a782dcbc9c45120210c7c973c",
+  "sourceArchiveSha256": "a4379ac53cff23a3be23c3088d2eb4e6dfa14e1da00b6ac3f5d9bf2a2b9bcc3d",
+  "version": "0.156.0-alpha.5",
+  "contextProtocol": 3,
+  "helpers": {
+    "aarch64-apple-darwin": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.156.0-alpha.5/codex-code-mode-host-aarch64-apple-darwin.tar.gz",
+      "sha256": "62f533a72733e984bf59ba3f9a236f9107542071966a22cf30a23270cfd5e2ec",
+      "executable": "codex-code-mode-host-aarch64-apple-darwin"
+    },
+    "aarch64-unknown-linux-musl": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.156.0-alpha.5/codex-code-mode-host-aarch64-unknown-linux-musl.tar.gz",
+      "sha256": "2dbeaf05bbe0082baca0290e3d8874c8613fd3f748efa2b2eb8013220d45b004",
+      "executable": "codex-code-mode-host-aarch64-unknown-linux-musl"
+    },
+    "x86_64-apple-darwin": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.156.0-alpha.5/codex-code-mode-host-x86_64-apple-darwin.tar.gz",
+      "sha256": "dd15588b7736e1eb20b15d7d4051b84b5c81fe35c3b3d7355ac1e8c7d54ae38d",
+      "executable": "codex-code-mode-host-x86_64-apple-darwin"
+    },
+    "x86_64-unknown-linux-musl": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.156.0-alpha.5/codex-code-mode-host-x86_64-unknown-linux-musl.tar.gz",
+      "sha256": "f6abfacdc758d20a394a4d5debad2330a9690422810d8ad0408caa3c0eafc19d",
+      "executable": "codex-code-mode-host-x86_64-unknown-linux-musl"
+    }
+  },
+  "flavor": "luna",
+  "patch": "native-checkpoint-luna.patch"
+}

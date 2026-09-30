@@ -15,13 +15,11 @@ import { exe } from "../src/config.mjs";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const hash = (file) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
-export function isCurrentManagedBuild(home) {
-  const file = join(home, "build-receipt.json");
+export function isCurrentManagedBuild(home, metaFile = "upstream.json") {
+  const meta = JSON.parse(readFileSync(join(root, "patches", metaFile), "utf8"));
+  const file = join(home, `build-receipt-${meta.flavor ?? "latest"}.json`);
   if (!existsSync(file)) return false;
   const receipt = JSON.parse(readFileSync(file, "utf8"));
-  const meta = JSON.parse(
-    readFileSync(join(root, "patches/upstream.json"), "utf8"),
-  );
   return (
     receipt.commit === meta.commit && receipt.patchSha256 === meta.patchSha256
   );
@@ -44,16 +42,17 @@ export async function run(command, args, options = {}) {
     );
   });
 }
-export async function buildCodex(home) {
+export async function buildCodex(home, metaFile = "upstream.json") {
   if (!["darwin", "linux", "win32"].includes(process.platform))
     throw new Error(
       "This native checkpoint currently requires macOS, Linux or Windows.",
     );
   const windows = process.platform === "win32";
   const meta = JSON.parse(
-    readFileSync(join(root, "patches/upstream.json"), "utf8"),
+    readFileSync(join(root, "patches", metaFile), "utf8"),
   );
-  const patch = join(root, "patches/native-checkpoint.patch");
+  const flavor = meta.flavor ?? "latest";
+  const patch = join(root, "patches", meta.patch ?? "native-checkpoint.patch");
   if (hash(patch) !== meta.patchSha256)
     throw new Error("Codex patch checksum mismatch");
   const build = join(
@@ -160,7 +159,7 @@ export async function buildCodex(home) {
   await run("tar", ["-xzf", "code-mode-host.tar.gz", "-C", "companion"], {
     cwd: build,
   });
-  const bin = join(home, "bin");
+  const bin = join(home, "bin", flavor);
   mkdirSync(bin, { recursive: true, mode: 0o700 });
   const sources = Object.fromEntries(
     ["codex", ...sandboxHelpers].map((name) => [
@@ -176,11 +175,12 @@ export async function buildCodex(home) {
     renameSync(temp, join(bin, name));
   }
   writeFileSync(
-    join(home, "build-receipt.json"),
+    join(home, `build-receipt-${flavor}.json`),
     JSON.stringify(
       {
         commit: meta.commit,
         patchSha256: meta.patchSha256,
+        flavor,
         binaries: Object.fromEntries(
           Object.keys(sources).map((n) => [n, hash(join(bin, n))]),
         ),

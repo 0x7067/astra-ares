@@ -94,10 +94,13 @@ export function locations(env = process.env) {
   return {
     home,
     config,
-    binary: join(home, `bin/codex${exe}`),
+    binary: binaryFor(home, "latest"),
     codexHome: join(home, "codex-home"),
     runs: join(home, "runs"),
   };
+}
+export function binaryFor(home, flavor) {
+  return join(home, "bin", flavor, `codex${exe}`);
 }
 export function validateConfig(value) {
   if (!value || typeof value !== "object" || Array.isArray(value))
@@ -113,6 +116,7 @@ export function validateConfig(value) {
     "baseUrl",
     "decisionModel",
     "contextTokenLimit",
+    "flavor",
   ];
   for (const key of Object.keys(value))
     if (!allowed.includes(key)) throw new Error(`Unknown config field: ${key}`);
@@ -134,6 +138,8 @@ export function validateConfig(value) {
     ).length > 1
   )
     throw new Error("Choose one of apiKey, apiKeyEnv or apiKeyFile");
+  if (value.flavor !== undefined && value.flavor !== "latest" && value.flavor !== "luna")
+    throw new Error("flavor must be latest or luna");
   for (const key of ["codexHome", "codexBinary", "apiKeyFile"])
     if (value[key] && !isAbsolute(value[key]))
       throw new Error(`${key} must be an absolute path`);

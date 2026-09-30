@@ -13,45 +13,61 @@ import { dirname, join } from "node:path";
 import { homedir, tmpdir } from "node:os";
 import { Bridge, controllerPath } from "./bridge.mjs";
 import { Jev } from "./jev.mjs";
-import { exe, loadConfig, readKey } from "./config.mjs";
+import { exe, loadConfig, readKey, binaryFor } from "./config.mjs";
 import { assertLocalCliArgs } from "./cli-args.mjs";
-export function verifyBinary(binary) {
+import {
+  DEFAULT_FLAVOR,
+  FLAVORS,
+  flavorFromArgs,
+  flavorMeta,
+} from "./flavors.mjs";
+export function verifyBinary(binary, flavor) {
+  const candidates = flavor ? [flavor] : FLAVORS;
   if (!existsSync(binary))
     throw new Error("Patched Codex is missing. Run ares setup.");
   const bytes = readFileSync(binary);
-  for (const marker of [
-    "CODEX_STEP_CONTROLLER_CONTEXT_V3",
-    "Jev requires its bridge",
-    "Astra Ares",
-    "Luna Ares",
-    "Sol Ares",
-  ]) {
-    if (!bytes.includes(Buffer.from(marker)))
-      throw new Error(
-        "This Codex binary has no compatible Jev checkpoint. Run ares setup.",
-      );
+  let version;
+  for (const candidate of candidates) {
+    const meta = flavorMeta(candidate);
+    const markers = [
+      "CODEX_STEP_CONTROLLER_CONTEXT_V3",
+      "Jev requires its bridge",
+      "Astra Ares",
+      "Sol Ares",
+      ...(candidate === "luna" ? ["Luna Ares"] : []),
+    ];
+    if (!markers.every((marker) => bytes.includes(Buffer.from(marker))))
+      continue;
+    try {
+      version = execFileSync(binary, ["--version"], {
+        encoding: "utf8",
+        // Defender can scan a fresh codex.exe for over a minute on first run.
+        timeout: 120_000,
+      }).trim();
+    } catch {
+      continue;
+    }
+    if (version === "codex-cli " + meta.version) break;
   }
-  if (
-    execFileSync(binary, ["--version"], {
-      encoding: "utf8",
-      // Defender can scan a fresh 300+ MB codex.exe for over a minute on first run.
-      timeout: 120_000,
-    }).trim() !== "codex-cli 0.156.0-alpha.5"
-  )
+  if (!version || !candidates.some(
+    (candidate) => version === "codex-cli " + flavorMeta(candidate).version,
+  ))
     throw new Error(
-      "Unsupported Codex version; rebuild the pinned source with ares setup.",
+      "This Codex binary has no compatible Jev checkpoint. Run ares setup.",
     );
   if (!existsSync(join(dirname(binary), `codex-code-mode-host${exe}`)))
     throw new Error(
       `codex-code-mode-host${exe} must be beside the patched Codex`,
     );
 }
-export async function launch(args, config = loadConfig(), options = {}) {
+export async function launch(argv, config = loadConfig(), options = {}) {
   if (!["darwin", "linux", "win32"].includes(process.platform))
     throw new Error("Jev native checkpoint requires macOS, Linux or Windows");
+  const { flavor: requested, args } = flavorFromArgs(argv);
+  const flavor = requested ?? config.flavor ?? DEFAULT_FLAVOR;
   assertLocalCliArgs(args);
-  const binary = config.codexBinary ?? config.paths.binary;
-  verifyBinary(binary);
+  const binary = config.codexBinary ?? binaryFor(config.paths.home, flavor);
+  verifyBinary(binary, config.codexBinary ? undefined : flavor);
   const home = options.codexHome ?? config.codexHome ?? config.paths.codexHome;
   mkdirSync(home, { recursive: true, mode: 0o700 });
   if (

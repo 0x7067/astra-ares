@@ -17,6 +17,7 @@ const baseModel = process.argv[4] ?? "gpt-6-astra";
 const alias = {
   "gpt-6-astra": "Astra-Jev",
   "gpt-6-sol": "Sol-Jev",
+  "gpt-6.1-sol": "Sol-Jev",
   "gpt-6-luna": "Luna-Jev",
 }[baseModel];
 assert(alias, "Unknown fixture model");

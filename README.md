@@ -64,7 +64,7 @@ You can also select another OpenRouter decision model or connect a separately op
 astra-ares
 ```
 
-The normal Codex terminal opens. In `/model`, select **Astra Ares**, **Sol Ares**, or **Luna Ares**. Each entry keeps its underlying model fixed while Jev chooses the reasoning effort. Entries appear when the corresponding model is available in your Codex catalog. New Ares profiles select Astra Ares by default.
+The normal Codex terminal opens. Two pinned flavors coexist: **latest** offers **Astra Ares** and **Sol Ares** (`gpt-6.1-sol`); **luna** adds **Luna Ares** (`gpt-6-luna`) with Sol Ares on `gpt-6-sol`. Run `astra-ares --flavor luna` (or set `ARES_FLAVOR`/`flavor` in the config) to use the Luna build; the default is latest. In `/model`, each Ares entry keeps its underlying model fixed while Jev chooses the reasoning effort. Entries appear when the corresponding model is available in your Codex catalog. New Ares profiles select Astra Ares by default.
 
 Confirmed effort changes appear directly in the transcript. Example display:
 
