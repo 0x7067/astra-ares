@@ -36,7 +36,7 @@ export function verifyBinary(binary) {
       encoding: "utf8",
       // Defender can scan a fresh 300+ MB codex.exe for over a minute on first run.
       timeout: 120_000,
-    }).trim() !== "codex-cli 0.155.0-alpha.9.2"
+    }).trim() !== "codex-cli 0.156.0-alpha.5"
   )
     throw new Error(
       "Unsupported Codex version; rebuild the pinned source with ares setup.",
