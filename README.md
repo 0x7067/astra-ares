@@ -64,7 +64,7 @@ You can also select another OpenRouter decision model or connect a separately op
 astra-ares
 ```
 
-The normal Codex terminal opens. Two pinned flavors coexist: **latest** offers **Astra Ares** and **Sol Ares** (`gpt-6.1-sol`); **luna** adds **Luna Ares** (`gpt-6-luna`) with Sol Ares on `gpt-6-sol`. Run `astra-ares --flavor luna` (or set `ARES_FLAVOR`/`flavor` in the config) to use the Luna build; the default is latest. In `/model`, each Ares entry keeps its underlying model fixed while Jev chooses the reasoning effort. Entries appear when the corresponding model is available in your Codex catalog. New Ares profiles select Astra Ares by default.
+The normal Codex terminal opens. Two pinned flavors coexist: **astra-ares** (default) offers **Astra Ares** and **Sol Ares** (`gpt-6.1-sol`); **luna-ares** adds **Luna Ares** (`gpt-6-luna`) with Sol Ares on `gpt-6-sol`. Run `astra-ares --flavor luna-ares` (or set `ARES_FLAVOR`/`flavor` in the config) to use the Luna build; the default is astra-ares. In `/model`, each Ares entry keeps its underlying model fixed while Jev chooses the reasoning effort. Entries appear when the corresponding model is available in your Codex catalog. New Ares profiles select Astra Ares by default.
 
 Confirmed effort changes appear directly in the transcript. Example display:
 
@@ -141,12 +141,12 @@ Run `ares doctor`, then `ares doctor --probe` to check the provider. Logs live i
 npm ci
 npm test
 # Native integration fixtures also need Bun and the patched binary (macOS/Linux):
-JEV_TEST_BINARY="$HOME/.local/share/astra-ares/bin/codex" npm run test:native
+JEV_TEST_BINARY="$HOME/.local/share/astra-ares/bin/astra-ares/codex" npm run test:native
 ```
 
 For Windows, see the PowerShell example in [validation](docs/validation.md#native-integration-fixtures).
 
-The patch and upstream source checksums are pinned in [patches/upstream.json](patches/upstream.json). The [architecture](docs/architecture.md) explains the native checkpoint, leases, and acknowledgements.
+The patch and upstream source checksums are pinned in [patches/upstream-astra-ares.json](patches/upstream-astra-ares.json) and [patches/upstream-luna-ares.json](patches/upstream-luna-ares.json). The [architecture](docs/architecture.md) explains the native checkpoint, leases, and acknowledgements.
 
 Local fixture tests require no API keys.
 

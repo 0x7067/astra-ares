@@ -15,9 +15,9 @@ import { exe } from "../src/config.mjs";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const hash = (file) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
-export function isCurrentManagedBuild(home, metaFile = "upstream.json") {
+export function isCurrentManagedBuild(home, metaFile = "upstream-astra-ares.json") {
   const meta = JSON.parse(readFileSync(join(root, "patches", metaFile), "utf8"));
-  const file = join(home, `build-receipt-${meta.flavor ?? "latest"}.json`);
+  const file = join(home, `build-receipt-${meta.flavor ?? "astra-ares"}.json`);
   if (!existsSync(file)) return false;
   const receipt = JSON.parse(readFileSync(file, "utf8"));
   return (
@@ -42,7 +42,7 @@ export async function run(command, args, options = {}) {
     );
   });
 }
-export async function buildCodex(home, metaFile = "upstream.json") {
+export async function buildCodex(home, metaFile = "upstream-astra-ares.json") {
   if (!["darwin", "linux", "win32"].includes(process.platform))
     throw new Error(
       "This native checkpoint currently requires macOS, Linux or Windows.",
@@ -51,7 +51,7 @@ export async function buildCodex(home, metaFile = "upstream.json") {
   const meta = JSON.parse(
     readFileSync(join(root, "patches", metaFile), "utf8"),
   );
-  const flavor = meta.flavor ?? "latest";
+  const flavor = meta.flavor ?? "astra-ares";
   const patch = join(root, "patches", meta.patch ?? "native-checkpoint.patch");
   if (hash(patch) !== meta.patchSha256)
     throw new Error("Codex patch checksum mismatch");
