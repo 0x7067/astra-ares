@@ -1,6 +1,6 @@
 # Architecture
 
-`astra-ares` launches a pinned native Codex with inherited terminal I/O. Two pinned flavors coexist: **latest** (Codex 0.159.2) offers `Astra Ares` (`gpt-6-astra`) and `Sol Ares` (`gpt-6.1-sol`); **luna** (Codex 0.156.0-alpha.5) adds `Luna Ares` (`gpt-6-luna`) and maps Sol Ares to `gpt-6-sol`. Select a flavor with `astra-ares --flavor luna`, `ARES_FLAVOR`, or `flavor` in the config; each flavor installs its own binary and code-mode host under `bin/<flavor>/`. Their stored selection IDs remain `Astra-Jev`, `Sol-Jev`, and `Luna-Jev`, so existing sessions retain their selection. Each preserves its real model identity on OpenAI requests; Jev selects effort, not the model. Ordinary catalog selections bypass the evaluator. This is a small native fork plus sidecar, not an MCP tool or HTTP proxy.
+`astra-ares` launches a pinned native Codex with inherited terminal I/O. Two pinned flavors coexist: **astra-ares** (Codex 0.159.2, default) offers `Astra Ares` (`gpt-6-astra`) and `Sol Ares` (`gpt-6.1-sol`); **luna-ares** (Codex 0.156.0-alpha.5) adds `Luna Ares` (`gpt-6-luna`) and maps Sol Ares to `gpt-6-sol`. Select a flavor with `astra-ares --flavor luna-ares`, `ARES_FLAVOR`, or `flavor` in the config; each flavor installs its own binary and code-mode host under `bin/<flavor>/`. Their stored selection IDs remain `Astra-Jev`, `Sol-Jev`, and `Luna-Jev`, so existing sessions retain their selection. Each preserves its real model identity on OpenAI requests; Jev selects effort, not the model. Ordinary catalog selections bypass the evaluator. This is a small native fork plus sidecar, not an MCP tool or HTTP proxy.
 
 Luna Ares lives on the older pin because upstream 0.156.0-alpha.6 gates reasoning-effort `configuration_update` items on the per-model `supports_reasoning_effort_updates` catalog flag, which `gpt-6-luna` and `gpt-6-sol` lack. On the latest pin only models advertising that flag (Astra and Sol 6.1) can switch effort without breaking the request-level baseline that prompt-cache prefixing needs.
 
@@ -20,7 +20,7 @@ For the selected GPT-6 model's reasoning-effort override, native `configuration_
 - 28,000 local tokens for the complete evaluator request: an explicit local error if exceeded.
 - Same-provider HTTP retries only; no alternative provider/model or saved-effort fallback after failure.
 - A provider error does not confirm or apply an effort. A cancelled request cannot commit a decision.
-- Source/archive/patch/companion checksums are pinned in `patches/upstream.json`; arbitrary Codex upgrades are not supported.
+- Source/archive/patch/companion checksums are pinned per flavor in `patches/upstream-*.json`; arbitrary Codex upgrades are not supported.
 
 ## Evaluator preview metadata
 

@@ -28,6 +28,6 @@
       "executable": "codex-code-mode-host-x86_64-unknown-linux-musl"
     }
   },
-  "flavor": "luna",
-  "patch": "native-checkpoint-luna.patch"
+  "flavor": "luna-ares",
+  "patch": "native-checkpoint-luna-ares.patch"
 }

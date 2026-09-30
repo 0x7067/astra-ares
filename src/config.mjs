@@ -62,8 +62,12 @@ export function validateConfig(value) {
     ).length > 1
   )
     throw new Error("Choose one of apiKey, apiKeyEnv or apiKeyFile");
-  if (value.flavor !== undefined && value.flavor !== "latest" && value.flavor !== "luna")
-    throw new Error("flavor must be latest or luna");
+  if (
+    value.flavor !== undefined &&
+    value.flavor !== "astra-ares" &&
+    value.flavor !== "luna-ares"
+  )
+    throw new Error("flavor must be astra-ares or luna-ares");
   for (const key of ["codexHome", "codexBinary", "apiKeyFile"])
     if (value[key] && !value[key].startsWith("/"))
       throw new Error(key + " must be an absolute path");

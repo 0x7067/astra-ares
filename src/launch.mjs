@@ -34,7 +34,7 @@ export function verifyBinary(binary, flavor) {
       "Jev requires its bridge",
       "Astra Ares",
       "Sol Ares",
-      ...(candidate === "luna" ? ["Luna Ares"] : []),
+      ...(candidate === "luna-ares" ? ["Luna Ares"] : []),
     ];
     if (!markers.every((marker) => bytes.includes(Buffer.from(marker))))
       continue;

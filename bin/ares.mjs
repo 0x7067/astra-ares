@@ -15,25 +15,25 @@ import { verifyBinary } from "../src/launch.mjs";
 import { Jev } from "../src/jev.mjs";
 import { buildCodex } from "../scripts/build-codex.mjs";
 import {
+  DEFAULT_FLAVOR,
   FLAVOR_META_FILES,
-  flavorMeta,
 } from "../src/flavors.mjs";
 import { binaryFor } from "../src/config.mjs";
 const help = `Astra-Ares — Adaptive Reasoning Effort Selection
 
-ares setup [--binary /path/to/patched/codex] [--provider vercel|typesafe|openrouter] [--flavor latest|luna]
+ares setup [--binary /path/to/patched/codex] [--provider vercel|typesafe|openrouter] [--flavor astra-ares|luna-ares]
 ares configure [--provider vercel|typesafe|openrouter] [--key-stdin]
 ares doctor [--probe]
 ares config-path
-astra-ares [--flavor latest|luna] [ordinary Codex CLI arguments]
+astra-ares [--flavor astra-ares|luna-ares] [ordinary Codex CLI arguments]
 
 Config: $ARES_CONFIG or ~/.config/astra-ares/config.json
 Data:   $ARES_HOME or ~/.local/share/astra-ares
 setup builds an isolated pinned Codex. --binary adopts an already patched build.
-Two pinned flavors coexist: latest (Codex 0.159.2, Sol Ares -> gpt-6.1-sol) and
-luna (Codex 0.156.0-alpha.5, adds Luna Ares -> gpt-6-luna). setup without --flavor
-builds every missing flavor. astra-ares runs latest unless --flavor or ARES_FLAVOR
-selects luna.
+Two pinned flavors coexist: astra-ares (Codex 0.159.2, Sol Ares -> gpt-6.1-sol)
+and luna-ares (Codex 0.156.0-alpha.5, adds Luna Ares -> gpt-6-luna). setup without
+--flavor builds every missing flavor. astra-ares runs its namesake flavor unless
+--flavor or ARES_FLAVOR selects luna-ares.
 configure reads a key without echo; --key-stdin accepts a piped secret.
 New installations use OpenRouter. Existing configurations keep their provider.
 Vercel: AI_GATEWAY_API_KEY. Direct TypeSafe: TYPESAFE_API_KEY.
@@ -95,7 +95,7 @@ try {
         const metaFile = FLAVOR_META_FILES[flavor];
         if (!metaFile)
           throw new Error(
-            `Unknown --flavor ${flavor}; use latest or luna`,
+            `Unknown --flavor ${flavor}; use astra-ares or luna-ares`,
           );
         const binary = binaryFor(paths.home, flavor);
         try {
@@ -148,7 +148,8 @@ try {
   } else if (command === "doctor") {
     const config = loadConfig();
     verifyBinary(
-      config.codexBinary ?? binaryFor(paths.home, config.flavor ?? "latest"),
+      config.codexBinary ??
+        binaryFor(paths.home, config.flavor ?? DEFAULT_FLAVOR),
     );
     const key = readKey(config);
     console.log(

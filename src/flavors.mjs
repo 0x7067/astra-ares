@@ -5,33 +5,28 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 export const FLAVOR_META_FILES = {
-  latest: "upstream.json",
-  luna: "upstream-luna.json",
+  "astra-ares": "upstream-astra-ares.json",
+  "luna-ares": "upstream-luna-ares.json",
 };
 
 export const FLAVORS = Object.keys(FLAVOR_META_FILES);
-export const DEFAULT_FLAVOR = "latest";
+export const DEFAULT_FLAVOR = "astra-ares";
 
-export function flavorMeta(flavor = DEFAULT_FLAVOR) {
+export function flavorMeta(flavor) {
   const file = FLAVOR_META_FILES[flavor];
-  if (!file) throw new Error(`Unknown flavor: ${flavor}`);
+  if (!file)
+    throw new Error("Unknown flavor " + flavor + ": use astra-ares or luna-ares");
   return JSON.parse(readFileSync(join(root, "patches", file), "utf8"));
 }
 
-export function flavorFromArgs(args, env = process.env) {
-  let flavor = env.ARES_FLAVOR;
-  const clean = [];
-  for (let i = 0; i < args.length; i++) {
-    const arg = args[i];
-    if (arg === "--flavor") {
-      flavor = args[++i];
-      continue;
-    }
-    if (arg.startsWith("--flavor=")) {
-      flavor = arg.slice("--flavor=".length);
-      continue;
-    }
-    clean.push(arg);
+export function flavorFromArgs(argv) {
+  const args = [...argv];
+  let flavor = process.env.ARES_FLAVOR;
+  for (const flag of ["--flavor", "--flavor="]) {
+    const i = args.findIndex((a) => a === flag || a.startsWith(flag + "="));
+    if (i === -1) continue;
+    if (args[i] === flag) flavor = args.splice(i, 2)[1];
+    else flavor = args.splice(i, 1)[0].slice(flag.length + 1);
   }
-  return { flavor, args: clean };
+  return { flavor, args };
 }

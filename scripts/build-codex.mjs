@@ -32,7 +32,10 @@ export async function run(command, args, options = {}) {
     );
   });
 }
-export async function buildCodex(home, metaFile = "upstream.json") {
+export async function buildCodex(
+  home,
+  metaFile = "upstream-astra-ares.json",
+) {
   if (!["darwin", "linux"].includes(process.platform))
     throw new Error(
       "This native checkpoint currently requires macOS or Linux.",
@@ -40,7 +43,7 @@ export async function buildCodex(home, metaFile = "upstream.json") {
   const meta = JSON.parse(
     readFileSync(join(root, "patches", metaFile), "utf8"),
   );
-  const flavor = meta.flavor ?? "latest";
+  const flavor = meta.flavor ?? "astra-ares";
   const patch = join(root, "patches", meta.patch ?? "native-checkpoint.patch");
   if (hash(patch) !== meta.patchSha256)
     throw new Error("Codex patch checksum mismatch");
