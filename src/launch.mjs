@@ -13,42 +13,59 @@ import { dirname, join } from "node:path";
 import { homedir, tmpdir } from "node:os";
 import { Bridge } from "./bridge.mjs";
 import { Jev } from "./jev.mjs";
-import { loadConfig, readKey } from "./config.mjs";
+import { loadConfig, readKey, binaryFor } from "./config.mjs";
 import { assertLocalCliArgs } from "./cli-args.mjs";
-export function verifyBinary(binary) {
+import {
+  DEFAULT_FLAVOR,
+  FLAVORS,
+  flavorFromArgs,
+  flavorMeta,
+} from "./flavors.mjs";
+export function verifyBinary(binary, flavor) {
+  const candidates = flavor ? [flavor] : FLAVORS;
   if (!existsSync(binary))
     throw new Error("Patched Codex is missing. Run ares setup.");
   const bytes = readFileSync(binary);
-  for (const marker of [
-    "CODEX_STEP_CONTROLLER_CONTEXT_V3",
-    "Jev requires its bridge",
-    "Astra Ares",
-    "Luna Ares",
-    "Sol Ares",
-  ]) {
-    if (!bytes.includes(Buffer.from(marker)))
-      throw new Error(
-        "This Codex binary has no compatible Jev checkpoint. Run ares setup.",
-      );
+  let version;
+  for (const candidate of candidates) {
+    const meta = flavorMeta(candidate);
+    const markers = [
+      "CODEX_STEP_CONTROLLER_CONTEXT_V3",
+      "Jev requires its bridge",
+      "Astra Ares",
+      "Sol Ares",
+      ...(candidate === "luna" ? ["Luna Ares"] : []),
+    ];
+    if (!markers.every((marker) => bytes.includes(Buffer.from(marker))))
+      continue;
+    try {
+      version = execFileSync(binary, ["--version"], {
+        encoding: "utf8",
+        timeout: 5000,
+      }).trim();
+    } catch {
+      continue;
+    }
+    if (version === "codex-cli " + meta.version) break;
   }
-  if (
-    execFileSync(binary, ["--version"], {
-      encoding: "utf8",
-      timeout: 5000,
-    }).trim() !== "codex-cli 0.156.0-alpha.5"
-  )
+  if (!version || !candidates.some(
+    (candidate) => version === "codex-cli " + flavorMeta(candidate).version,
+  ))
     throw new Error(
-      "Unsupported Codex version; rebuild the pinned source with ares setup.",
+      "This Codex binary has no compatible Jev checkpoint. Run ares setup.",
     );
   if (!existsSync(join(dirname(binary), "codex-code-mode-host")))
     throw new Error("codex-code-mode-host must be beside the patched Codex");
 }
-export async function launch(args, config = loadConfig()) {
+export async function launch(argv, config = loadConfig()) {
   if (!["darwin", "linux"].includes(process.platform))
     throw new Error("Jev native checkpoint requires macOS or Linux");
+  const { flavor: requested, args } = flavorFromArgs(argv);
+  const flavor = requested ?? config.flavor ?? DEFAULT_FLAVOR;
   assertLocalCliArgs(args);
-  const binary = config.codexBinary ?? config.paths.binary;
-  verifyBinary(binary);
+  const binary =
+    config.codexBinary ?? binaryFor(config.paths.home, flavor);
+  verifyBinary(binary, config.codexBinary ? undefined : flavor);
   const home = config.codexHome ?? config.paths.codexHome;
   mkdirSync(home, { recursive: true, mode: 0o700 });
   if (!existsSync(join(home, "config.toml")))

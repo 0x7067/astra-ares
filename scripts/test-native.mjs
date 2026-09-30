@@ -1,15 +1,21 @@
-import { spawn } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 const binary = process.env.JEV_TEST_BINARY;
 if (!binary) throw new Error("Set JEV_TEST_BINARY to the patched Codex binary");
-for (const [name, model] of [
-  ["context"],
-  ["session"],
-  ["selection", "gpt-6-astra"],
-  ["selection", "gpt-6-sol"],
-  ["selection", "gpt-6-luna"],
-]) {
+const version = execFileSync(binary, ["--version"], { encoding: "utf8" }).trim();
+const selections =
+  version === "codex-cli 0.156.0-alpha.5"
+    ? [
+        ["selection", "gpt-6-astra"],
+        ["selection", "gpt-6-sol"],
+        ["selection", "gpt-6-luna"],
+      ]
+    : [
+        ["selection", "gpt-6-astra"],
+        ["selection", "gpt-6.1-sol"],
+      ];
+for (const [name, model] of [["context"], ["session"], ...selections]) {
   const out = resolve(`work/test-${name}-${model ?? "astra"}-${Date.now()}`);
   mkdirSync(out, { recursive: true });
   const child = spawn(

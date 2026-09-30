@@ -14,17 +14,26 @@ import {
 import { verifyBinary } from "../src/launch.mjs";
 import { Jev } from "../src/jev.mjs";
 import { buildCodex } from "../scripts/build-codex.mjs";
+import {
+  FLAVOR_META_FILES,
+  flavorMeta,
+} from "../src/flavors.mjs";
+import { binaryFor } from "../src/config.mjs";
 const help = `Astra-Ares — Adaptive Reasoning Effort Selection
 
-ares setup [--binary /path/to/patched/codex] [--provider vercel|typesafe|openrouter]
+ares setup [--binary /path/to/patched/codex] [--provider vercel|typesafe|openrouter] [--flavor latest|luna]
 ares configure [--provider vercel|typesafe|openrouter] [--key-stdin]
 ares doctor [--probe]
 ares config-path
-astra-ares [ordinary Codex CLI arguments]
+astra-ares [--flavor latest|luna] [ordinary Codex CLI arguments]
 
 Config: $ARES_CONFIG or ~/.config/astra-ares/config.json
 Data:   $ARES_HOME or ~/.local/share/astra-ares
 setup builds an isolated pinned Codex. --binary adopts an already patched build.
+Two pinned flavors coexist: latest (Codex 0.159.2, Sol Ares -> gpt-6.1-sol) and
+luna (Codex 0.156.0-alpha.5, adds Luna Ares -> gpt-6-luna). setup without --flavor
+builds every missing flavor. astra-ares runs latest unless --flavor or ARES_FLAVOR
+selects luna.
 configure reads a key without echo; --key-stdin accepts a piped secret.
 New installations use OpenRouter. Existing configurations keep their provider.
 Vercel: AI_GATEWAY_API_KEY. Direct TypeSafe: TYPESAFE_API_KEY.
@@ -51,7 +60,7 @@ try {
   const command = process.argv[2] ?? "help";
   const options = parse(process.argv.slice(3));
   const allowedOptions = {
-    setup: ["binary", "provider"],
+    setup: ["binary", "provider", "flavor"],
     configure: ["provider", "key-stdin"],
     doctor: ["probe"],
   };
@@ -70,19 +79,34 @@ try {
     if (options.binary) {
       config.codexBinary = resolve(options.binary);
       verifyBinary(config.codexBinary);
-    } else {
+    } else if (config.codexBinary) {
       try {
-        verifyBinary(config.codexBinary ?? paths.binary);
+        verifyBinary(config.codexBinary);
       } catch (error) {
-        if (config.codexBinary)
+        throw new Error(
+          `Configured codexBinary is incompatible: ${error.message} Rebuild it and use setup --binary, or remove codexBinary from ${paths.config} to build the managed binary.`,
+        );
+      }
+    } else {
+      const flavors = options.flavor
+        ? [options.flavor]
+        : Object.keys(FLAVOR_META_FILES);
+      for (const flavor of flavors) {
+        const metaFile = FLAVOR_META_FILES[flavor];
+        if (!metaFile)
           throw new Error(
-            `Configured codexBinary is incompatible: ${error.message} Rebuild it and use setup --binary, or remove codexBinary from ${paths.config} to build the managed binary.`,
+            `Unknown --flavor ${flavor}; use latest or luna`,
           );
-        console.log("Building the current native checkpoint...");
-        await buildCodex(paths.home);
+        const binary = binaryFor(paths.home, flavor);
+        try {
+          verifyBinary(binary, flavor);
+        } catch {
+          console.log(`Building the ${flavor} native checkpoint...`);
+          await buildCodex(paths.home, metaFile);
+        }
+        verifyBinary(binaryFor(paths.home, flavor), flavor);
       }
     }
-    verifyBinary(config.codexBinary ?? paths.binary);
     saveConfig(paths.config, config);
     console.log(
       `Ready. Config: ${paths.config}\nSet your provider key with ares configure, or its environment variable.\nStart: astra-ares`,
@@ -123,7 +147,9 @@ try {
     console.log(`Credential saved privately in ${paths.config}`);
   } else if (command === "doctor") {
     const config = loadConfig();
-    verifyBinary(config.codexBinary ?? paths.binary);
+    verifyBinary(
+      config.codexBinary ?? binaryFor(paths.home, config.flavor ?? "latest"),
+    );
     const key = readKey(config);
     console.log(
       `Codex checkpoint: compatible\nProvider: ${config.provider}\nCredential: present\nConfig: ${paths.config}`,

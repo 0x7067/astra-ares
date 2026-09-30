@@ -32,15 +32,16 @@ export async function run(command, args, options = {}) {
     );
   });
 }
-export async function buildCodex(home) {
+export async function buildCodex(home, metaFile = "upstream.json") {
   if (!["darwin", "linux"].includes(process.platform))
     throw new Error(
       "This native checkpoint currently requires macOS or Linux.",
     );
   const meta = JSON.parse(
-    readFileSync(join(root, "patches/upstream.json"), "utf8"),
+    readFileSync(join(root, "patches", metaFile), "utf8"),
   );
-  const patch = join(root, "patches/native-checkpoint.patch");
+  const flavor = meta.flavor ?? "latest";
+  const patch = join(root, "patches", meta.patch ?? "native-checkpoint.patch");
   if (hash(patch) !== meta.patchSha256)
     throw new Error("Codex patch checksum mismatch");
   const build = join(
@@ -123,7 +124,7 @@ export async function buildCodex(home) {
   const companionDir = join(build, "companion");
   mkdirSync(companionDir, { recursive: true });
   await run("tar", ["-xzf", companionArchive, "-C", companionDir]);
-  const bin = join(home, "bin");
+  const bin = join(home, "bin", flavor);
   mkdirSync(bin, { recursive: true, mode: 0o700 });
   const sources = {
     codex: join(source, "codex-rs/target/dev-small/codex"),
@@ -136,11 +137,12 @@ export async function buildCodex(home) {
     renameSync(temp, join(bin, name));
   }
   writeFileSync(
-    join(home, "build-receipt.json"),
+    join(home, `build-receipt-${flavor}.json`),
     JSON.stringify(
       {
         commit: meta.commit,
         patchSha256: meta.patchSha256,
+        flavor,
         binaries: Object.fromEntries(
           Object.keys(sources).map((n) => [n, hash(join(bin, n))]),
         ),
