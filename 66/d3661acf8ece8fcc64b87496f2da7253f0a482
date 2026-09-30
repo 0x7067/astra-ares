@@ -1,0 +1,21 @@
+patches/upstream-astra-ares.json
+  s_da49090a4c7614::t_980526e92837d4 8-9
+patches/upstream-luna-ares.json
+  s_da49090a4c7614::t_63f25980f21474 31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "66d3661acf8ece8fcc64b87496f2da7253f0a482",
+  "prompts": {},
+  "sessions": {
+    "s_da49090a4c7614": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "295dc7ae-64ce-4757-a2da-18b35a3a4ccb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Pedro Guimarães <21346846+0x7067@users.noreply.github.com>"
+    }
+  }
+}
