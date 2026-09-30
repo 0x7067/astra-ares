@@ -35,7 +35,7 @@ export function verifyBinary(binary) {
     execFileSync(binary, ["--version"], {
       encoding: "utf8",
       timeout: 5000,
-    }).trim() !== "codex-cli 0.155.0-alpha.9.2"
+    }).trim() !== "codex-cli 0.156.0-alpha.5"
   )
     throw new Error(
       "Unsupported Codex version; rebuild the pinned source with ares setup.",
