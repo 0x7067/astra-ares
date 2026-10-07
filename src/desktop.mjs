@@ -13,7 +13,8 @@ import { homedir } from "node:os";
 import { dirname, isAbsolute, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash, randomUUID } from "node:crypto";
-import { loadConfig, readKey } from "./config.mjs";
+import { binaryFor, loadConfig, readKey } from "./config.mjs";
+import { DEFAULT_FLAVOR } from "./flavors.mjs";
 import { launch, verifyBinary } from "./launch.mjs";
 import { DESKTOP_FLAGS, withDesktopConfig } from "./desktop-config.mjs";
 
@@ -296,7 +297,9 @@ export class DesktopIntegration {
         ? readDesktopReceipt(this.paths.state)
         : null;
       const config = loadConfig(this.env);
-      const binary = config.codexBinary ?? config.paths.binary;
+      const binary =
+        config.codexBinary ??
+        binaryFor(config.paths.home, config.flavor ?? DEFAULT_FLAVOR);
       this.verify(binary);
       const previous = previousState?.previous ?? this.environment();
       const state = previousState ?? {

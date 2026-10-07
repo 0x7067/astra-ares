@@ -26,7 +26,7 @@ export function verifyBinary(binary, flavor) {
   if (!existsSync(binary))
     throw new Error("Patched Codex is missing. Run ares setup.");
   const bytes = readFileSync(binary);
-  let version;
+  let compatible = false;
   for (const candidate of candidates) {
     const meta = flavorMeta(candidate);
     const markers = [
@@ -39,19 +39,20 @@ export function verifyBinary(binary, flavor) {
     if (!markers.every((marker) => bytes.includes(Buffer.from(marker))))
       continue;
     try {
-      version = execFileSync(binary, ["--version"], {
+      const version = execFileSync(binary, ["--version"], {
         encoding: "utf8",
         // Defender can scan a fresh codex.exe for over a minute on first run.
         timeout: 120_000,
       }).trim();
+      if (version === "codex-cli " + meta.version) {
+        compatible = true;
+        break;
+      }
     } catch {
       continue;
     }
-    if (version === "codex-cli " + meta.version) break;
   }
-  if (!version || !candidates.some(
-    (candidate) => version === "codex-cli " + flavorMeta(candidate).version,
-  ))
+  if (!compatible)
     throw new Error(
       "This Codex binary has no compatible Jev checkpoint. Run ares setup.",
     );

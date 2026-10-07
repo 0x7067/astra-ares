@@ -17,7 +17,7 @@ export async function load(url, context, nextLoad) {
       import { join } from "node:path";
       import { setTimeout } from "node:timers/promises";
       export function isCurrentManagedBuild() { return true; }
-      export async function buildCodex(home) {
+      export async function buildCodex(home, metaFile) {
         console.log("FIXTURE_BUILD_WAITING");
         const deadline = Date.now() + 10000;
         while (!existsSync(join(home, "continue-build"))) {
@@ -26,8 +26,9 @@ export async function load(url, context, nextLoad) {
         }
         if (process.env.ARES_TEST_BUILD_FAIL === "1")
           throw new Error("Fixture compilation failed");
-        mkdirSync(join(home, "bin"), { recursive: true });
-        writeFileSync(join(home, process.platform === "win32" ? "bin/codex.exe" : "bin/codex"), "fixture");
+        const flavor = metaFile.replace(/^upstream-/, "").replace(/\.json$/, "");
+        mkdirSync(join(home, "bin", flavor), { recursive: true });
+        writeFileSync(join(home, "bin", flavor, process.platform === "win32" ? "codex.exe" : "codex"), "fixture");
       }
     `;
   }

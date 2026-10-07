@@ -3,7 +3,9 @@ import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 const binary = process.env.JEV_TEST_BINARY;
 if (!binary) throw new Error("Set JEV_TEST_BINARY to the patched Codex binary");
-const version = execFileSync(binary, ["--version"], { encoding: "utf8" }).trim();
+const version = execFileSync(binary, ["--version"], {
+  encoding: "utf8",
+}).trim();
 const selections =
   version === "codex-cli 0.156.0-alpha.5"
     ? [

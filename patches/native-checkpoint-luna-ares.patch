@@ -1,7 +1,7 @@
-diff --git a/codex-rs/Cargo.lock b/codex-rs/Cargo.lock
-index 5b4aead69d77dcbf63f7357dc6546095ae024a2d..7ab8dca9018f2a9c27876f62052a0a918745d9fe 100644
---- a/codex-rs/Cargo.lock
-+++ b/codex-rs/Cargo.lock
+diff --git c/codex-rs/Cargo.lock i/codex-rs/Cargo.lock
+index 5b4aead..7ab8dca 100644
+--- c/codex-rs/Cargo.lock
++++ i/codex-rs/Cargo.lock
 @@ -416,7 +416,7 @@ checksum = "2a4385e2e34eb35d6b3efe798b9eb88096925d87726c0798709bf56d9ed84af3"
  
  [[package]]
@@ -1368,10 +1368,10 @@ index 5b4aead69d77dcbf63f7357dc6546095ae024a2d..7ab8dca9018f2a9c27876f62052a0a91
  dependencies = [
   "anyhow",
   "assert_cmd",
-diff --git a/codex-rs/app-server-protocol/schema/json/ServerNotification.json b/codex-rs/app-server-protocol/schema/json/ServerNotification.json
-index 70eb9c821c8dd29197aa1fa31c2ced8a9ab3104f..2df7687c0b7d549a67dd04edec190cd9af29027d 100644
---- a/codex-rs/app-server-protocol/schema/json/ServerNotification.json
-+++ b/codex-rs/app-server-protocol/schema/json/ServerNotification.json
+diff --git c/codex-rs/app-server-protocol/schema/json/ServerNotification.json i/codex-rs/app-server-protocol/schema/json/ServerNotification.json
+index 70eb9c8..2df7687 100644
+--- c/codex-rs/app-server-protocol/schema/json/ServerNotification.json
++++ i/codex-rs/app-server-protocol/schema/json/ServerNotification.json
 @@ -3557,6 +3557,49 @@
        "minLength": 1,
        "type": "string"
@@ -1449,10 +1449,10 @@ index 70eb9c821c8dd29197aa1fa31c2ced8a9ab3104f..2df7687c0b7d549a67dd04edec190cd9
      {
        "properties": {
          "method": {
-diff --git a/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json b/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
-index 1009e4c1da17d0e677ff4d11fe8e7b9c6b434abc..99e4b6a3d3e2e83cd8cba5615442e7dbd2cdb68f 100644
---- a/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
-+++ b/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
+diff --git c/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json i/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
+index 1009e4c..99e4b6a 100644
+--- c/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
++++ i/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
 @@ -5732,6 +5732,26 @@
            "title": "ModelProvider/authRecoveryCompletedNotification",
            "type": "object"
@@ -1532,10 +1532,10 @@ index 1009e4c1da17d0e677ff4d11fe8e7b9c6b434abc..99e4b6a3d3e2e83cd8cba5615442e7db
        "ReasoningItemContent": {
          "oneOf": [
            {
-diff --git a/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json b/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
-index d122965b2f901bad3b4969670ed327a1fa458e08..35044b3187c894aa114b311113a771ceb130f226 100644
---- a/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
-+++ b/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
+diff --git c/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json i/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
+index d122965..35044b3 100644
+--- c/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
++++ i/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
 @@ -14035,6 +14035,51 @@
        ],
        "type": "object"
@@ -1615,11 +1615,11 @@ index d122965b2f901bad3b4969670ed327a1fa458e08..35044b3187c894aa114b311113a771ce
          {
            "properties": {
              "method": {
-diff --git a/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json b/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json
+diff --git c/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json i/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json
 new file mode 100644
-index 0000000000000000000000000000000000000000..e616e7af21684444bcbeb2130d21a8aad77e0b10
+index 0000000..e616e7a
 --- /dev/null
-+++ b/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json
++++ i/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json
 @@ -0,0 +1,45 @@
 +{
 +  "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1667,7 +1667,7 @@ index 0000000000000000000000000000000000000000..e616e7af21684444bcbeb2130d21a8aa
 +  "type": "object"
 +}
 \ No newline at end of file
-diff --git a/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-experimental.json.zst b/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-experimental.json.zst
+diff --git c/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-experimental.json.zst i/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-experimental.json.zst
 index d1767064f8a9e37b24e4d57a2a38a0c3199df0ed..3e42d3b4a8e5bacb2ef200ed73cad780f47ffc93 100644
 GIT binary patch
 literal 159670
@@ -7791,7 +7791,7 @@ zQraGRSCJ~n&C|8FVpWc?y``W4-V8nrigda00SVz`yUevAY(fuSC{q#j{u&#C+?yK*
 z3k{hC6oH+1>oLk(k0?|`h}UyS;uZe$E)o5Fs?ozu{%L$vs2AFEET1BJ#zQ+~z;0Sb
 JhK=R7Boq$VGs*w}
 
-diff --git a/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-stable.json.zst b/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-stable.json.zst
+diff --git c/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-stable.json.zst i/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-stable.json.zst
 index 69572ad7e6b57bd3085c99cef1afbd6b3c470a85..4fca82644ec9ea36394a3a858ba0f7c8806f4d2c 100644
 GIT binary patch
 literal 153553
@@ -13679,10 +13679,10 @@ zah`(nt+nU~=350I2yJ|8!a~WR)YoAv25Y%`s5-Rf^pcC3n*p1eyO)n^B_X3@>Xb&x
 z+qdklP+(YA-OA6h)wMPKB-1bkRY00)UG4FeWg1de0^OeT9|v-JjYVJ_57qB=Z`5cd
 DJG(+l
 
-diff --git a/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts b/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
-index da1360df17c64311fa38ad86a50a499140ee39ab..975022ba74e3d6eb2f56e974f99442fe2125a4fe 100644
---- a/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
-+++ b/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
+diff --git c/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts i/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
+index da1360d..975022b 100644
+--- c/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
++++ i/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
 @@ -41,6 +41,7 @@ import type { ProcessOutputDeltaNotification } from "./v2/ProcessOutputDeltaNoti
  import type { ProjectChangedNotification } from "./v2/ProjectChangedNotification";
  import type { RawResponseCompletedNotification } from "./v2/RawResponseCompletedNotification";
@@ -13923,10 +13923,10 @@ index da1360df17c64311fa38ad86a50a499140ee39ab..975022ba74e3d6eb2f56e974f99442fe
 +      method: "account/login/completed";
 +      params: AccountLoginCompletedNotification;
 +    };
-diff --git a/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts b/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
-index 47f35db0c79125025fb1f604f665f959a75394f4..2ef45e0087d49d674cdee7761cc8a78e376aa47f 100644
---- a/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
-+++ b/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
+diff --git c/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts i/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
+index 47f35db..2ef45e0 100644
+--- c/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
++++ i/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
 @@ -41,6 +41,7 @@ import type { ProcessOutputDeltaNotification } from "./v2/ProcessOutputDeltaNoti
  import type { ProjectChangedNotification } from "./v2/ProjectChangedNotification";
  import type { RawResponseCompletedNotification } from "./v2/RawResponseCompletedNotification";
@@ -14181,11 +14181,11 @@ index 47f35db0c79125025fb1f604f665f959a75394f4..2ef45e0087d49d674cdee7761cc8a78e
 +      params: AccountLoginCompletedNotification;
 +    }
 +);
-diff --git a/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts b/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts
+diff --git c/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts i/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts
 new file mode 100644
-index 0000000000000000000000000000000000000000..a7e11549a6907b60341e1c29bedb92958c25ec4e
+index 0000000..a7e1154
 --- /dev/null
-+++ b/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts
++++ i/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts
 @@ -0,0 +1,13 @@
 +// GENERATED CODE! DO NOT MODIFY BY HAND!
 +
@@ -14200,10 +14200,10 @@ index 0000000000000000000000000000000000000000..a7e11549a6907b60341e1c29bedb9295
 +  leaseSteps: number;
 +  evaluatorMs: number;
 +};
-diff --git a/codex-rs/app-server-protocol/schema/typescript/v2/index.ts b/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
-index 64c7420cc025e053473b96abf172088ea4deb48d..829ae600fd5aa4c422e3f1176dba0e7e9587237a 100644
---- a/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
-+++ b/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
+diff --git c/codex-rs/app-server-protocol/schema/typescript/v2/index.ts i/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
+index 64c7420..829ae60 100644
+--- c/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
++++ i/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
 @@ -413,6 +413,7 @@ export type { RateLimitWindow } from "./RateLimitWindow";
  export type { RawResponseCompletedNotification } from "./RawResponseCompletedNotification";
  export type { RawResponseItemCompletedNotification } from "./RawResponseItemCompletedNotification";
@@ -14212,10 +14212,10 @@ index 64c7420cc025e053473b96abf172088ea4deb48d..829ae600fd5aa4c422e3f1176dba0e7e
  export type { ReasoningSummaryPartAddedNotification } from "./ReasoningSummaryPartAddedNotification";
  export type { ReasoningSummaryTextDeltaNotification } from "./ReasoningSummaryTextDeltaNotification";
  export type { ReasoningTextDeltaNotification } from "./ReasoningTextDeltaNotification";
-diff --git a/codex-rs/app-server-protocol/src/protocol/common.rs b/codex-rs/app-server-protocol/src/protocol/common.rs
-index 2174b1d7804cae6fa2bd2cc52324b802fff7dfb2..91bd979b611b681b8a638cf5fe3e6d7df6aac216 100644
---- a/codex-rs/app-server-protocol/src/protocol/common.rs
-+++ b/codex-rs/app-server-protocol/src/protocol/common.rs
+diff --git c/codex-rs/app-server-protocol/src/protocol/common.rs i/codex-rs/app-server-protocol/src/protocol/common.rs
+index 2174b1d..91bd979 100644
+--- c/codex-rs/app-server-protocol/src/protocol/common.rs
++++ i/codex-rs/app-server-protocol/src/protocol/common.rs
 @@ -1988,6 +1988,8 @@ server_notification_definitions! {
      ModelVerification => "model/verification" (v2::ModelVerificationNotification),
      AuthRecoveryStarted => "modelProvider/authRecoveryStarted" (v2::AuthRecoveryNotification),
@@ -14225,10 +14225,10 @@ index 2174b1d7804cae6fa2bd2cc52324b802fff7dfb2..91bd979b611b681b8a638cf5fe3e6d7d
      #[experimental("turn/moderationMetadata")]
      TurnModerationMetadata => "turn/moderationMetadata" (v2::TurnModerationMetadataNotification),
      ModelSafetyBufferingUpdated => "model/safetyBuffering/updated" (v2::ModelSafetyBufferingUpdatedNotification),
-diff --git a/codex-rs/app-server-protocol/src/protocol/v2/notification.rs b/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
-index ca0e7753f3cb3c007e544b3507881b6cffeecacd..917c5f9aec5ecd0765224d5d4b2883ef14d8abaa 100644
---- a/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
-+++ b/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
+diff --git c/codex-rs/app-server-protocol/src/protocol/v2/notification.rs i/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
+index ca0e775..917c5f9 100644
+--- c/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
++++ i/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
 @@ -5,6 +5,21 @@ use crate::TS;
  use serde::Deserialize;
  use serde::Serialize;
@@ -14251,10 +14251,10 @@ index ca0e7753f3cb3c007e544b3507881b6cffeecacd..917c5f9aec5ecd0765224d5d4b2883ef
  #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS)]
  #[serde(rename_all = "camelCase")]
  #[ts(export_to = "v2/")]
-diff --git a/codex-rs/app-server/src/bespoke_event_handling.rs b/codex-rs/app-server/src/bespoke_event_handling.rs
-index c88258fa56fa28c4cc0c66a3e831121b91512982..09a81b287f2769b4ef1ea9e54af21e749c12d924 100644
---- a/codex-rs/app-server/src/bespoke_event_handling.rs
-+++ b/codex-rs/app-server/src/bespoke_event_handling.rs
+diff --git c/codex-rs/app-server/src/bespoke_event_handling.rs i/codex-rs/app-server/src/bespoke_event_handling.rs
+index c88258f..09a81b2 100644
+--- c/codex-rs/app-server/src/bespoke_event_handling.rs
++++ i/codex-rs/app-server/src/bespoke_event_handling.rs
 @@ -280,6 +280,21 @@ pub(crate) async fn apply_bespoke_event_handling(
                  .send_server_notification(ServerNotification::Warning(notification))
                  .await;
@@ -14277,10 +14277,10 @@ index c88258fa56fa28c4cc0c66a3e831121b91512982..09a81b287f2769b4ef1ea9e54af21e74
          EventMsg::GuardianWarning(warning_event) => {
              let notification = GuardianWarningNotification {
                  thread_id: conversation_id.to_string(),
-diff --git a/codex-rs/app-server/src/notification_media.rs b/codex-rs/app-server/src/notification_media.rs
-index 04e57f8c53441d0ee14569063b98283503c99538..f595709e808394d8f0c51315d49024a327d100f4 100644
---- a/codex-rs/app-server/src/notification_media.rs
-+++ b/codex-rs/app-server/src/notification_media.rs
+diff --git c/codex-rs/app-server/src/notification_media.rs i/codex-rs/app-server/src/notification_media.rs
+index 04e57f8..f595709 100644
+--- c/codex-rs/app-server/src/notification_media.rs
++++ i/codex-rs/app-server/src/notification_media.rs
 @@ -113,6 +113,7 @@ pub(crate) fn without_notification_media(notification: ServerNotification) -> Se
          | ServerNotification::ModelVerification(_)
          | ServerNotification::AuthRecoveryStarted(_)
@@ -14289,11 +14289,63 @@ index 04e57f8c53441d0ee14569063b98283503c99538..f595709e808394d8f0c51315d49024a3
          | ServerNotification::TurnModerationMetadata(_)
          | ServerNotification::ModelSafetyBufferingUpdated(_)
          | ServerNotification::Warning(_)
-diff --git a/codex-rs/core/src/session/decision_context.rs b/codex-rs/core/src/session/decision_context.rs
+diff --git c/codex-rs/core/src/config/edit.rs i/codex-rs/core/src/config/edit.rs
+index 82ad54d..6054b5d 100644
+--- c/codex-rs/core/src/config/edit.rs
++++ i/codex-rs/core/src/config/edit.rs
+@@ -628,6 +628,19 @@ impl ConfigDocument {
+         let mut current = self.doc.as_table_mut();
+ 
+         for (index, segment) in segments.iter().enumerate() {
++            // Keep a promoted inline table's comments outside the new header.
++            let inline_decor = current
++                .get(segment.as_str())
++                .and_then(TomlItem::as_inline_table)
++                .map(|inline| inline.decor().suffix().cloned());
++            let promoted_decor = if let Some(suffix) = inline_decor {
++                let mut key = current.key_mut(segment.as_str())?;
++                let prefix = key.leaf_decor().prefix().cloned();
++                key.leaf_decor_mut().clear();
++                Some((prefix, suffix))
++            } else {
++                None
++            };
+             match mode {
+                 TraversalMode::Create => {
+                     if !current.contains_key(segment.as_str()) {
+@@ -652,6 +665,14 @@ impl ConfigDocument {
+                     current = document_helpers::ensure_table_for_read(item)?;
+                 }
+             }
++            if let Some((prefix, suffix)) = promoted_decor {
++                if let Some(prefix) = prefix {
++                    current.decor_mut().set_prefix(prefix);
++                }
++                if let Some(suffix) = suffix {
++                    current.decor_mut().set_suffix(suffix);
++                }
++            }
+         }
+ 
+         Some(current)
+@@ -769,7 +790,11 @@ fn apply_blocking_to_resolved_file(
+         return Ok(());
+     }
+ 
+-    write_atomically(&write_paths.write_path, &document.doc.to_string()).with_context(|| {
++    let updated = document.doc.to_string();
++    updated
++        .parse::<DocumentMut>()
++        .context("Ares config editor rejected invalid TOML before writing")?;
++    write_atomically(&write_paths.write_path, &updated).with_context(|| {
+         format!(
+             "failed to persist config at {}",
+             write_paths.write_path.display()
+diff --git c/codex-rs/core/src/session/decision_context.rs i/codex-rs/core/src/session/decision_context.rs
 new file mode 100644
-index 0000000000000000000000000000000000000000..5246c521175d87a4ab67ce92f03c73b74aee3fbe
+index 0000000..5246c52
 --- /dev/null
-+++ b/codex-rs/core/src/session/decision_context.rs
++++ i/codex-rs/core/src/session/decision_context.rs
 @@ -0,0 +1,193 @@
 +//! Text visible to a supervisor: user input, published commentary/summaries, and
 +//! paired recent tools. Opaque reasoning and media never enter this projection.
@@ -14488,15 +14540,15 @@ index 0000000000000000000000000000000000000000..5246c521175d87a4ab67ce92f03c73b7
 +        omitted_older_tool_calls,
 +    }
 +}
-diff --git a/codex-rs/core/src/session/mod.rs b/codex-rs/core/src/session/mod.rs
-index 60e61dc0ecd2d65cbaac7cc66e8adf8e1234f1a0..0529d9b7a9193ba1c33fe06347e1e8786ee07df9 100644
---- a/codex-rs/core/src/session/mod.rs
-+++ b/codex-rs/core/src/session/mod.rs
+diff --git c/codex-rs/core/src/session/mod.rs i/codex-rs/core/src/session/mod.rs
+index 60e61dc..8ca2753 100644
+--- c/codex-rs/core/src/session/mod.rs
++++ i/codex-rs/core/src/session/mod.rs
 @@ -232,12 +232,16 @@ use codex_protocol::exec_output::StreamOutput;
  mod code_mode_warning;
  pub(crate) mod context_window;
  mod daemon_recovery;
-+#[cfg(unix)]
++#[cfg(any(unix, windows))]
 +mod decision_context;
  mod environment;
  mod extension_interruption;
@@ -14504,7 +14556,7 @@ index 60e61dc0ecd2d65cbaac7cc66e8adf8e1234f1a0..0529d9b7a9193ba1c33fe06347e1e878
  mod handlers;
  mod inject;
  mod reasoning_effort;
-+#[cfg(unix)]
++#[cfg(any(unix, windows))]
 +pub(crate) mod step_controller;
  pub(crate) use reasoning_effort::RequestEffortUsage;
  mod input_queue;
@@ -14513,7 +14565,7 @@ index 60e61dc0ecd2d65cbaac7cc66e8adf8e1234f1a0..0529d9b7a9193ba1c33fe06347e1e878
          turn_context: &TurnContext,
          item: TurnItem,
      ) {
-+        #[cfg(unix)]
++        #[cfg(any(unix, windows))]
 +        if let TurnItem::CommandExecution(command) = &item
 +            && let Some(exit_code) = command.exit_code
 +        {
@@ -14522,12 +14574,12 @@ index 60e61dc0ecd2d65cbaac7cc66e8adf8e1234f1a0..0529d9b7a9193ba1c33fe06347e1e878
          record_turn_ttfm_metric(turn_context, &item).await;
          for contributor in self.services.extensions.turn_lifecycle_contributors() {
              contributor
-diff --git a/codex-rs/core/src/session/step_controller.rs b/codex-rs/core/src/session/step_controller.rs
+diff --git c/codex-rs/core/src/session/step_controller.rs i/codex-rs/core/src/session/step_controller.rs
 new file mode 100644
-index 0000000000000000000000000000000000000000..cf91524aadbde7134a00a60331c593d8e786aba6
+index 0000000..e38568c
 --- /dev/null
-+++ b/codex-rs/core/src/session/step_controller.rs
-@@ -0,0 +1,339 @@
++++ i/codex-rs/core/src/session/step_controller.rs
+@@ -0,0 +1,362 @@
 +//! Opt-in evaluator bridge for every native CLI frontend. The bridge selects an
 +//! effort; core applies it through the same live settings path as app-server.
 +
@@ -14550,7 +14602,6 @@ index 0000000000000000000000000000000000000000..cf91524aadbde7134a00a60331c593d8
 +use serde::Serialize;
 +use tokio::io::AsyncReadExt;
 +use tokio::io::AsyncWriteExt;
-+use tokio::net::UnixStream;
 +
 +use super::decision_context::DecisionContext;
 +use super::decision_context::decision_context;
@@ -14558,8 +14609,32 @@ index 0000000000000000000000000000000000000000..cf91524aadbde7134a00a60331c593d8
 +use super::step_context::StepContext;
 +use super::turn_context::TurnContext;
 +
++#[cfg(unix)]
++type Connection = tokio::net::UnixStream;
++#[cfg(windows)]
++type Connection = tokio::net::windows::named_pipe::NamedPipeClient;
++
++#[cfg(unix)]
++async fn connect(path: std::ffi::OsString) -> std::io::Result<Connection> {
++    Connection::connect(path).await
++}
++
++// The bridge listens on a named pipe; retry while all its instances are busy.
++#[cfg(windows)]
++async fn connect(path: std::ffi::OsString) -> std::io::Result<Connection> {
++    const ERROR_PIPE_BUSY: i32 = 231;
++    loop {
++        match tokio::net::windows::named_pipe::ClientOptions::new().open(&path) {
++            Err(error) if error.raw_os_error() == Some(ERROR_PIPE_BUSY) => {
++                tokio::time::sleep(Duration::from_millis(50)).await;
++            }
++            result => return result,
++        }
++    }
++}
++
 +pub(super) struct StepController {
-+    connection: Option<UnixStream>,
++    connection: Option<Connection>,
 +    sequence: u64,
 +    failures: Arc<ToolFailureCounter>,
 +    original_prompt: String,
@@ -14733,7 +14808,7 @@ index 0000000000000000000000000000000000000000..cf91524aadbde7134a00a60331c593d8
 +            let socket = std::env::var_os("CODEX_STEP_CONTROLLER_SOCKET")
 +                .ok_or_else(|| failure("Jev requires its bridge. Launch astra-ares."))?;
 +            self.connection = Some(
-+                tokio::time::timeout(Duration::from_secs(5), UnixStream::connect(socket))
++                tokio::time::timeout(Duration::from_secs(5), connect(socket))
 +                    .await
 +                    .map_err(|_| failure("connection timeout"))?
 +                    .map_err(|error| failure(error.to_string()))?,
@@ -14867,15 +14942,15 @@ index 0000000000000000000000000000000000000000..cf91524aadbde7134a00a60331c593d8
 +        Ok(())
 +    }
 +}
-diff --git a/codex-rs/core/src/session/turn.rs b/codex-rs/core/src/session/turn.rs
-index 7b624d8509962c52146a9fabf76ada3ed6122c76..2670f75b7b2703095fd1fdaead48fd16a8ae7863 100644
---- a/codex-rs/core/src/session/turn.rs
-+++ b/codex-rs/core/src/session/turn.rs
-@@ -419,6 +419,21 @@ pub(crate) async fn run_turn(
+diff --git c/codex-rs/core/src/session/turn.rs i/codex-rs/core/src/session/turn.rs
+index 7b624d8..815b0a3 100644
+--- c/codex-rs/core/src/session/turn.rs
++++ i/codex-rs/core/src/session/turn.rs
+@@ -419,6 +419,23 @@ pub(crate) async fn run_turn(
      // 2. After auto-compact, when model/tool continuation needs to resume before any steer.
  
      let mut next_step_context = Some(first_step_context);
-+    #[cfg(not(unix))]
++    #[cfg(not(any(unix, windows)))]
 +    if codex_protocol::openai_models::jev_base_model(
 +        turn_context
 +            .current_settings
@@ -14885,19 +14960,21 @@ index 7b624d8509962c52146a9fabf76ada3ed6122c76..2670f75b7b2703095fd1fdaead48fd16
 +    )
 +    .is_some()
 +    {
-+        return Err(CodexErr::Fatal("Jev requires a Unix platform".to_owned()));
++        return Err(CodexErr::Fatal(
++            "Jev requires a Unix or Windows platform".to_owned(),
++        ));
 +    }
-+    #[cfg(unix)]
++    #[cfg(any(unix, windows))]
 +    let mut step_controller =
 +        super::step_controller::StepController::new(&turn_context, &turn_user_input(&input));
      let mut guardian_budget_compacted = false;
      loop {
          // Note that pending_input would be something like a message the user
-@@ -456,6 +471,19 @@ pub(crate) async fn run_turn(
+@@ -456,6 +473,19 @@ pub(crate) async fn run_turn(
          .await;
  
          // Capture once so context, advertised tools, and tool calls share one request view.
-+        #[cfg(unix)]
++        #[cfg(any(unix, windows))]
 +        let applied_settings = {
 +            step_controller.accept_user_input(&turn_user_input(&pending_input));
 +            let applied = step_controller
@@ -14913,11 +14990,11 @@ index 7b624d8509962c52146a9fabf76ada3ed6122c76..2670f75b7b2703095fd1fdaead48fd16
          let step_context = match next_step_context.take() {
              Some(step_context) if pending_input.is_empty() => step_context,
              None if pending_input.is_empty() => {
-@@ -493,6 +521,13 @@ pub(crate) async fn run_turn(
+@@ -493,6 +523,13 @@ pub(crate) async fn run_turn(
                  .await?
              }
          };
-+        #[cfg(unix)]
++        #[cfg(any(unix, windows))]
 +        if let Some(applied) = applied_settings {
 +            step_controller
 +                .confirm(&sess, &turn_context, &step_context, applied)
@@ -14927,7 +15004,7 @@ index 7b624d8509962c52146a9fabf76ada3ed6122c76..2670f75b7b2703095fd1fdaead48fd16
          let sampling_request_result: CodexResult<_> = async {
              super::time_reminder::maybe_record_current_time_reminder(
                  sess.as_ref(),
-@@ -2009,6 +2044,7 @@ pub(super) fn realtime_text_for_event(msg: &EventMsg) -> Option<(String, Option<
+@@ -2009,6 +2046,7 @@ pub(super) fn realtime_text_for_event(msg: &EventMsg) -> Option<(String, Option<
          | EventMsg::Warning(_)
          | EventMsg::AuthRecoveryStarted(_)
          | EventMsg::AuthRecoveryCompleted(_)
@@ -14935,10 +15012,10 @@ index 7b624d8509962c52146a9fabf76ada3ed6122c76..2670f75b7b2703095fd1fdaead48fd16
          | EventMsg::GuardianWarning(_)
          | EventMsg::RealtimeConversationStarted(_)
          | EventMsg::RealtimeConversationSdp(_)
-diff --git a/codex-rs/core/src/session/turn_context.rs b/codex-rs/core/src/session/turn_context.rs
-index fe60d59b3008e2e3de1949a6940d36f6f27bea34..84c66f19d28a8fcfb9c63bf34f4163c06f7ac591 100644
---- a/codex-rs/core/src/session/turn_context.rs
-+++ b/codex-rs/core/src/session/turn_context.rs
+diff --git c/codex-rs/core/src/session/turn_context.rs i/codex-rs/core/src/session/turn_context.rs
+index fe60d59..84c66f1 100644
+--- c/codex-rs/core/src/session/turn_context.rs
++++ i/codex-rs/core/src/session/turn_context.rs
 @@ -762,10 +762,31 @@ impl TurnContext {
              ),
              network: self.turn_context_network_item(),
@@ -14973,15 +15050,15 @@ index fe60d59b3008e2e3de1949a6940d36f6f27bea34..84c66f19d28a8fcfb9c63bf34f4163c0
              multi_agent_version: Some(self.multi_agent_version),
              multi_agent_mode: None,
              realtime_active: Some(self.realtime_active),
-diff --git a/codex-rs/core/src/tools/lifecycle.rs b/codex-rs/core/src/tools/lifecycle.rs
-index 55288f755958ee4cca32056979ef7b0034fb2445..3fdb3a673375f0fb1e0317e336f1b688b67f7fd5 100644
---- a/codex-rs/core/src/tools/lifecycle.rs
-+++ b/codex-rs/core/src/tools/lifecycle.rs
+diff --git c/codex-rs/core/src/tools/lifecycle.rs i/codex-rs/core/src/tools/lifecycle.rs
+index 55288f7..d22e65f 100644
+--- c/codex-rs/core/src/tools/lifecycle.rs
++++ i/codex-rs/core/src/tools/lifecycle.rs
 @@ -116,6 +116,21 @@ async fn notify_tool_finish_parts(
      source: ToolCallSource,
      outcome: ToolCallOutcome,
  ) {
-+    #[cfg(unix)]
++    #[cfg(any(unix, windows))]
 +    if let Some(counter) = turn
 +        .extension_data
 +        .get::<crate::session::step_controller::ToolFailureCounter>()
@@ -14999,10 +15076,10 @@ index 55288f755958ee4cca32056979ef7b0034fb2445..3fdb3a673375f0fb1e0317e336f1b688
      for contributor in session.services.extensions.tool_lifecycle_contributors() {
          contributor
              .on_tool_finish(ToolFinishInput {
-diff --git a/codex-rs/exec/src/event_processor_with_human_output.rs b/codex-rs/exec/src/event_processor_with_human_output.rs
-index 222bc485ab425ea4ad0bad8107cc5e2303bd20d9..93c6eba4d911cf6ef7f492a0a43bf2d17b51ef1d 100644
---- a/codex-rs/exec/src/event_processor_with_human_output.rs
-+++ b/codex-rs/exec/src/event_processor_with_human_output.rs
+diff --git c/codex-rs/exec/src/event_processor_with_human_output.rs i/codex-rs/exec/src/event_processor_with_human_output.rs
+index 222bc48..93c6eba 100644
+--- c/codex-rs/exec/src/event_processor_with_human_output.rs
++++ i/codex-rs/exec/src/event_processor_with_human_output.rs
 @@ -240,6 +240,17 @@ impl EventProcessor for EventProcessorWithHumanOutput {
                  CodexStatus::Running
              }
@@ -15021,10 +15098,10 @@ index 222bc485ab425ea4ad0bad8107cc5e2303bd20d9..93c6eba4d911cf6ef7f492a0a43bf2d1
              ServerNotification::AuthRecoveryStarted(notification) => {
                  eprintln!("{}", notification.message);
                  CodexStatus::Running
-diff --git a/codex-rs/exec/src/lib.rs b/codex-rs/exec/src/lib.rs
-index b56a56f1ebea4e91b300913af17d6812db35e9f4..4430d531f1461144e4c955a687e754d4c8d03412 100644
---- a/codex-rs/exec/src/lib.rs
-+++ b/codex-rs/exec/src/lib.rs
+diff --git c/codex-rs/exec/src/lib.rs i/codex-rs/exec/src/lib.rs
+index b56a56f..4430d53 100644
+--- c/codex-rs/exec/src/lib.rs
++++ i/codex-rs/exec/src/lib.rs
 @@ -1594,6 +1594,9 @@ fn should_process_notification(
          ServerNotification::Error(notification) => {
              notification.thread_id == thread_id && notification.turn_id == turn_id
@@ -15035,10 +15112,10 @@ index b56a56f1ebea4e91b300913af17d6812db35e9f4..4430d531f1461144e4c955a687e754d4
          ServerNotification::HookCompleted(notification) => {
              notification.thread_id == thread_id
                  && notification
-diff --git a/codex-rs/models-manager/src/manager.rs b/codex-rs/models-manager/src/manager.rs
-index c7b1a19ad58e0d2c3f0300f3a3df9a42143c19bb..697848ceb33982a01b6096a073fad647c6657bf0 100644
---- a/codex-rs/models-manager/src/manager.rs
-+++ b/codex-rs/models-manager/src/manager.rs
+diff --git c/codex-rs/models-manager/src/manager.rs i/codex-rs/models-manager/src/manager.rs
+index c7b1a19..697848c 100644
+--- c/codex-rs/models-manager/src/manager.rs
++++ i/codex-rs/models-manager/src/manager.rs
 @@ -159,6 +159,22 @@ pub trait ModelsManager: fmt::Debug + Send + Sync {
              .is_some_and(AuthManager::current_auth_uses_codex_backend);
          presets = ModelPreset::filter_by_auth(presets, uses_codex_backend);
@@ -15070,10 +15147,10 @@ index c7b1a19ad58e0d2c3f0300f3a3df9a42143c19bb..697848ceb33982a01b6096a073fad647
      // First use the normal longest-prefix match. If that misses, allow a narrowly scoped
      // retry for namespaced slugs like `custom/gpt-5.3-codex`.
      let remote = find_model_by_longest_prefix(model, candidates)
-diff --git a/codex-rs/models-manager/src/manager_tests.rs b/codex-rs/models-manager/src/manager_tests.rs
-index 4ef297142abc8921828a2169bc25efda941b82ff..e42f4e23e6144f8a5957365656eaf4fd173d742e 100644
---- a/codex-rs/models-manager/src/manager_tests.rs
-+++ b/codex-rs/models-manager/src/manager_tests.rs
+diff --git c/codex-rs/models-manager/src/manager_tests.rs i/codex-rs/models-manager/src/manager_tests.rs
+index 4ef2971..e42f4e2 100644
+--- c/codex-rs/models-manager/src/manager_tests.rs
++++ i/codex-rs/models-manager/src/manager_tests.rs
 @@ -1623,3 +1623,44 @@ fn bundled_models_json_roundtrips() {
          "bundled models.json should contain at least one model"
      );
@@ -15119,10 +15196,10 @@ index 4ef297142abc8921828a2169bc25efda941b82ff..e42f4e23e6144f8a5957365656eaf4fd
 +        }));
 +    }
 +}
-diff --git a/codex-rs/protocol/src/openai_models.rs b/codex-rs/protocol/src/openai_models.rs
-index f52a4e601b49acf90cdc7380465ef9517340b87c..ae82dc828008f79dbc675fea7cae41a27b27998b 100644
---- a/codex-rs/protocol/src/openai_models.rs
-+++ b/codex-rs/protocol/src/openai_models.rs
+diff --git c/codex-rs/protocol/src/openai_models.rs i/codex-rs/protocol/src/openai_models.rs
+index f52a4e6..ae82dc8 100644
+--- c/codex-rs/protocol/src/openai_models.rs
++++ i/codex-rs/protocol/src/openai_models.rs
 @@ -53,6 +53,28 @@ pub use guardian_v2::GuardianV2TranscriptModelConfig;
  pub const MODEL_SPECIALTY_CYBER: &str = "cyber";
  pub const SPEED_TIER_FAST: &str = "fast";
@@ -15152,10 +15229,10 @@ index f52a4e601b49acf90cdc7380465ef9517340b87c..ae82dc828008f79dbc675fea7cae41a2
  /// See https://platform.openai.com/docs/guides/reasoning?api-mode=responses#get-started-with-reasoning
  #[derive(Debug, Default, Clone, PartialEq, Eq, TS, Hash)]
  #[ts(type = "string")]
-diff --git a/codex-rs/protocol/src/protocol.rs b/codex-rs/protocol/src/protocol.rs
-index 787d3e48a819adcda65964961c326f076a53678f..238e63a38003362f49a3c3db4f0755386d1158f4 100644
---- a/codex-rs/protocol/src/protocol.rs
-+++ b/codex-rs/protocol/src/protocol.rs
+diff --git c/codex-rs/protocol/src/protocol.rs i/codex-rs/protocol/src/protocol.rs
+index 787d3e4..238e63a 100644
+--- c/codex-rs/protocol/src/protocol.rs
++++ i/codex-rs/protocol/src/protocol.rs
 @@ -1363,6 +1363,9 @@ pub enum EventMsg {
      /// indicates the turn continued but the user should still be notified.
      Warning(WarningEvent),
@@ -15182,10 +15259,10 @@ index 787d3e48a819adcda65964961c326f076a53678f..238e63a38003362f49a3c3db4f075538
  /// User-facing progress for provider-owned authentication recovery.
  #[derive(Debug, Clone, Deserialize, Serialize, PartialEq, Eq, JsonSchema, TS)]
  pub struct AuthRecoveryEvent {
-diff --git a/codex-rs/rollout-trace/src/protocol_event.rs b/codex-rs/rollout-trace/src/protocol_event.rs
-index dadc4bb0acf9563cf2c39156ac129ac2fba5a4e0..68a93135ff5099a71a5254fe16f5eecc4f025fb8 100644
---- a/codex-rs/rollout-trace/src/protocol_event.rs
-+++ b/codex-rs/rollout-trace/src/protocol_event.rs
+diff --git c/codex-rs/rollout-trace/src/protocol_event.rs i/codex-rs/rollout-trace/src/protocol_event.rs
+index dadc4bb..68a9313 100644
+--- c/codex-rs/rollout-trace/src/protocol_event.rs
++++ i/codex-rs/rollout-trace/src/protocol_event.rs
 @@ -365,6 +365,7 @@ pub(crate) fn tool_runtime_trace_event(event: &EventMsg) -> Option<ToolRuntimeTr
          | EventMsg::Warning(_)
          | EventMsg::AuthRecoveryStarted(_)
@@ -15202,10 +15279,10 @@ index dadc4bb0acf9563cf2c39156ac129ac2fba5a4e0..68a93135ff5099a71a5254fe16f5eecc
          | EventMsg::GuardianWarning(_)
          | EventMsg::SafetyBuffering(_)
          | EventMsg::RealtimeConversationStarted(_)
-diff --git a/codex-rs/rollout/src/policy.rs b/codex-rs/rollout/src/policy.rs
-index c82b5ce958c81b10c57d829951bf8fdee7efef6e..f83da3dfd72c9ec4bbb73812e6e2047986b21e0c 100644
---- a/codex-rs/rollout/src/policy.rs
-+++ b/codex-rs/rollout/src/policy.rs
+diff --git c/codex-rs/rollout/src/policy.rs i/codex-rs/rollout/src/policy.rs
+index c82b5ce..f83da3d 100644
+--- c/codex-rs/rollout/src/policy.rs
++++ i/codex-rs/rollout/src/policy.rs
 @@ -154,6 +154,7 @@ pub fn should_persist_event_msg(ev: &EventMsg, history_mode: ThreadHistoryMode)
          | EventMsg::Warning(_)
          | EventMsg::AuthRecoveryStarted(_)
@@ -15214,10 +15291,10 @@ index c82b5ce958c81b10c57d829951bf8fdee7efef6e..f83da3dfd72c9ec4bbb73812e6e20479
          | EventMsg::GuardianWarning(_)
          | EventMsg::RealtimeConversationStarted(_)
          | EventMsg::RealtimeConversationSdp(_)
-diff --git a/codex-rs/tui/src/app/app_server_event_targets.rs b/codex-rs/tui/src/app/app_server_event_targets.rs
-index 4753a2afde44f2c861580d62d4ed6f162c21113a..545865e192f5ca01e962a60d563b5479f28f32af 100644
---- a/codex-rs/tui/src/app/app_server_event_targets.rs
-+++ b/codex-rs/tui/src/app/app_server_event_targets.rs
+diff --git c/codex-rs/tui/src/app/app_server_event_targets.rs i/codex-rs/tui/src/app/app_server_event_targets.rs
+index 4753a2a..545865e 100644
+--- c/codex-rs/tui/src/app/app_server_event_targets.rs
++++ i/codex-rs/tui/src/app/app_server_event_targets.rs
 @@ -183,6 +183,9 @@ pub(super) fn server_notification_thread_target(
              Some(notification.thread_id.as_str())
          }
@@ -15228,10 +15305,10 @@ index 4753a2afde44f2c861580d62d4ed6f162c21113a..545865e192f5ca01e962a60d563b5479
          ServerNotification::GuardianWarning(notification) => Some(notification.thread_id.as_str()),
          ServerNotification::McpServerStatusUpdated(notification) => {
              match notification.thread_id.as_deref() {
-diff --git a/codex-rs/tui/src/app/event_dispatch.rs b/codex-rs/tui/src/app/event_dispatch.rs
-index 5a6f2506a36a2b329057e4603a922a8ee1032173..5b6caf2f3e0b379fee881679ccc5b0d055298eae 100644
---- a/codex-rs/tui/src/app/event_dispatch.rs
-+++ b/codex-rs/tui/src/app/event_dispatch.rs
+diff --git c/codex-rs/tui/src/app/event_dispatch.rs i/codex-rs/tui/src/app/event_dispatch.rs
+index 5a6f250..5b6caf2 100644
+--- c/codex-rs/tui/src/app/event_dispatch.rs
++++ i/codex-rs/tui/src/app/event_dispatch.rs
 @@ -1972,7 +1972,7 @@ impl App {
                          .add_error_message(format!("Failed to save default model: {error}"));
                  } else {
@@ -15251,16 +15328,16 @@ index 5a6f2506a36a2b329057e4603a922a8ee1032173..5b6caf2f3e0b379fee881679ccc5b0d0
                          if let Some(label) = Self::reasoning_label_for(&model, effort.as_ref()) {
                              message.push(' ');
                              message.push_str(&label);
-diff --git a/codex-rs/tui/src/app/exit_summary.rs b/codex-rs/tui/src/app/exit_summary.rs
-index 39b023805bf434fc921394744da63bbc93ba589b..4a80c854b55a432f76663733107b63d0a909e2fc 100644
---- a/codex-rs/tui/src/app/exit_summary.rs
-+++ b/codex-rs/tui/src/app/exit_summary.rs
+diff --git c/codex-rs/tui/src/app/exit_summary.rs i/codex-rs/tui/src/app/exit_summary.rs
+index 39b0238..7f8d19b 100644
+--- c/codex-rs/tui/src/app/exit_summary.rs
++++ i/codex-rs/tui/src/app/exit_summary.rs
 @@ -80,6 +80,15 @@ impl App {
  impl AppExitInfo {
      /// Format the terminal summary for both the CLI and standalone TUI binaries.
      pub fn format_exit_messages(self, color_enabled: bool) -> Vec<String> {
 +        let program = if std::env::var_os("CODEX_STEP_CONTROLLER_SOCKET").is_some() {
-+            "codex-jev"
++            "astra-ares"
 +        } else {
 +            "codex"
 +        };
@@ -15294,11 +15371,11 @@ index 39b023805bf434fc921394744da63bbc93ba589b..4a80c854b55a432f76663733107b63d0
 +#[cfg(test)]
 +#[path = "exit_summary_jev_tests.rs"]
 +mod jev_tests;
-diff --git a/codex-rs/tui/src/app/exit_summary_jev_tests.rs b/codex-rs/tui/src/app/exit_summary_jev_tests.rs
+diff --git c/codex-rs/tui/src/app/exit_summary_jev_tests.rs i/codex-rs/tui/src/app/exit_summary_jev_tests.rs
 new file mode 100644
-index 0000000000000000000000000000000000000000..323a6f78ab38bf5ac19a6eaf9e38531293300ecd
+index 0000000..a86c972
 --- /dev/null
-+++ b/codex-rs/tui/src/app/exit_summary_jev_tests.rs
++++ i/codex-rs/tui/src/app/exit_summary_jev_tests.rs
 @@ -0,0 +1,22 @@
 +use super::*;
 +
@@ -15316,16 +15393,16 @@ index 0000000000000000000000000000000000000000..323a6f78ab38bf5ac19a6eaf9e385312
 +        update_action: None,
 +        exit_reason: ExitReason::UserRequested,
 +    };
-+    insta::assert_snapshot!(info.format_exit_messages_with_program(/*color_enabled*/ false, "codex-jev").join("\n"), @r"
++    insta::assert_snapshot!(info.format_exit_messages_with_program(/*color_enabled*/ false, "astra-ares").join("\n"), @r"
 +To continue this session, run:
-+  codex-jev resume 123e4567-e89b-12d3-a456-426614174000
-+Or run codex-jev resume and select My task.
++  astra-ares resume 123e4567-e89b-12d3-a456-426614174000
++Or run astra-ares resume and select My task.
 +");
 +}
-diff --git a/codex-rs/tui/src/chatwidget/model_popups.rs b/codex-rs/tui/src/chatwidget/model_popups.rs
-index 06fe99c841dbd8a78978d8a0dea8c489c2bab6ff..757e62631df2b3421a6952ccabd8e34c822d2a74 100644
---- a/codex-rs/tui/src/chatwidget/model_popups.rs
-+++ b/codex-rs/tui/src/chatwidget/model_popups.rs
+diff --git c/codex-rs/tui/src/chatwidget/model_popups.rs i/codex-rs/tui/src/chatwidget/model_popups.rs
+index 06fe99c..757e626 100644
+--- c/codex-rs/tui/src/chatwidget/model_popups.rs
++++ i/codex-rs/tui/src/chatwidget/model_popups.rs
 @@ -257,7 +257,8 @@ impl ChatWidget {
                  _ => None,
              }
@@ -15347,10 +15424,10 @@ index 06fe99c841dbd8a78978d8a0dea8c489c2bab6ff..757e62631df2b3421a6952ccabd8e34c
          let default_effort = preset.default_reasoning_effort.clone();
          let supported = &preset.supported_reasoning_efforts;
          let in_plan_mode =
-diff --git a/codex-rs/tui/src/chatwidget/protocol.rs b/codex-rs/tui/src/chatwidget/protocol.rs
-index 97e447e2e9626ed1f4d0222ce86aad32dcdeba94..f05e86f3ba413166ce5b32d76293fc511a4a07d2 100644
---- a/codex-rs/tui/src/chatwidget/protocol.rs
-+++ b/codex-rs/tui/src/chatwidget/protocol.rs
+diff --git c/codex-rs/tui/src/chatwidget/protocol.rs i/codex-rs/tui/src/chatwidget/protocol.rs
+index 97e447e..f05e86f 100644
+--- c/codex-rs/tui/src/chatwidget/protocol.rs
++++ i/codex-rs/tui/src/chatwidget/protocol.rs
 @@ -223,6 +223,41 @@ impl ChatWidget {
                  ]);
              }
@@ -15393,10 +15470,10 @@ index 97e447e2e9626ed1f4d0222ce86aad32dcdeba94..f05e86f3ba413166ce5b32d76293fc51
              ServerNotification::GuardianWarning(notification) => {
                  if !notification
                      .message
-diff --git a/codex-rs/tui/src/chatwidget/settings.rs b/codex-rs/tui/src/chatwidget/settings.rs
-index 24d4713b0ff04ae97af46c8366cb66d8f04a1a90..5718ad7ad6f8985120974218b8cf667e1e5c4140 100644
---- a/codex-rs/tui/src/chatwidget/settings.rs
-+++ b/codex-rs/tui/src/chatwidget/settings.rs
+diff --git c/codex-rs/tui/src/chatwidget/settings.rs i/codex-rs/tui/src/chatwidget/settings.rs
+index 24d4713..5718ad7 100644
+--- c/codex-rs/tui/src/chatwidget/settings.rs
++++ i/codex-rs/tui/src/chatwidget/settings.rs
 @@ -670,7 +670,8 @@ impl ChatWidget {
          if previous_mode != next_mode
              && (previous_model != next_model || previous_effort != next_effort)
@@ -15407,11 +15484,11 @@ index 24d4713b0ff04ae97af46c8366cb66d8f04a1a90..5718ad7ad6f8985120974218b8cf667e
              if !next_model.starts_with("codex-auto-") {
                  let reasoning_label = match next_effort.as_ref() {
                      None | Some(ReasoningEffortConfig::None) => "default",
-diff --git a/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap b/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap
+diff --git c/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap i/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap
 new file mode 100644
-index 0000000000000000000000000000000000000000..7184135a3892f8f10c5ab9587a4f61b99dada90a
+index 0000000..7184135
 --- /dev/null
-+++ b/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap
++++ i/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap
 @@ -0,0 +1,10 @@
 +---
 +source: tui/src/chatwidget/tests/popups_and_settings.rs
@@ -15423,10 +15500,10 @@ index 0000000000000000000000000000000000000000..7184135a3892f8f10c5ab9587a4f61b9
 +› 1. Astra Ares  Astra with automatic effort from Jev
 +
 +  Press enter to confirm or esc to go back
-diff --git a/codex-rs/tui/src/chatwidget/tests/app_server.rs b/codex-rs/tui/src/chatwidget/tests/app_server.rs
-index 5365996f9046121e855023ead7b7f32c96e3d96f..3ebff3f6216d79d00c64f8f74f8bcd15ce2bfaa0 100644
---- a/codex-rs/tui/src/chatwidget/tests/app_server.rs
-+++ b/codex-rs/tui/src/chatwidget/tests/app_server.rs
+diff --git c/codex-rs/tui/src/chatwidget/tests/app_server.rs i/codex-rs/tui/src/chatwidget/tests/app_server.rs
+index 5365996..3ebff3f 100644
+--- c/codex-rs/tui/src/chatwidget/tests/app_server.rs
++++ i/codex-rs/tui/src/chatwidget/tests/app_server.rs
 @@ -1986,3 +1986,32 @@ async fn permission_discovery_invalidates_on_thread_settings_and_uses_updated_cw
      };
      assert_eq!(thread_cwd, Some(test_path_buf("/tmp/thread-settings")));
@@ -15460,10 +15537,10 @@ index 5365996f9046121e855023ead7b7f32c96e3d96f..3ebff3f6216d79d00c64f8f74f8bcd15
 +     Step 3 · next 2 generation(s) · 321 ms
 +");
 +}
-diff --git a/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs b/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
-index 162d0d1ba3f775713e3dfc8d0c06f2cd75cbc7e3..238826c1ddf22e208f24bf526634f546bca8f1fe 100644
---- a/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
-+++ b/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
+diff --git c/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs i/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
+index 162d0d1..238826c 100644
+--- c/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
++++ i/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
 @@ -4289,3 +4289,38 @@ async fn account_change_dismisses_the_previous_app_directory_snapshot() {
          format!("Before account change:\n{before}\n\nAfter account change:\n{after}")
      );
@@ -15503,10 +15580,10 @@ index 162d0d1ba3f775713e3dfc8d0c06f2cd75cbc7e3..238826c1ddf22e208f24bf526634f546
 +        assert_eq!(crate::model_catalog::model_display_name(alias), name);
 +    }
 +}
-diff --git a/codex-rs/tui/src/model_catalog.rs b/codex-rs/tui/src/model_catalog.rs
-index 6f8a4e4ad9e5b7215403204957364381419f4ec6..a890ed23b4dee7bdd2c2b7170cfd6a2659d9a73a 100644
---- a/codex-rs/tui/src/model_catalog.rs
-+++ b/codex-rs/tui/src/model_catalog.rs
+diff --git c/codex-rs/tui/src/model_catalog.rs i/codex-rs/tui/src/model_catalog.rs
+index 6f8a4e4..a890ed2 100644
+--- c/codex-rs/tui/src/model_catalog.rs
++++ i/codex-rs/tui/src/model_catalog.rs
 @@ -11,7 +11,7 @@ pub(crate) fn model_display_name(model: &str) -> &str {
      if model.eq_ignore_ascii_case(LUNA_RESERVE_MODEL) {
          "Luna Reserve"
@@ -15516,10 +15593,10 @@ index 6f8a4e4ad9e5b7215403204957364381419f4ec6..a890ed23b4dee7bdd2c2b7170cfd6a26
      }
  }
  
-diff --git a/sdk/python/src/openai_codex/generated/notification_registry.py b/sdk/python/src/openai_codex/generated/notification_registry.py
-index 2fbb5048f89dac89f482e037088a9f7484cc7915..a6be4d0d5984c245096d7e6327a9424b3ed97c7e 100644
---- a/sdk/python/src/openai_codex/generated/notification_registry.py
-+++ b/sdk/python/src/openai_codex/generated/notification_registry.py
+diff --git c/sdk/python/src/openai_codex/generated/notification_registry.py i/sdk/python/src/openai_codex/generated/notification_registry.py
+index 2fbb504..a6be4d0 100644
+--- c/sdk/python/src/openai_codex/generated/notification_registry.py
++++ i/sdk/python/src/openai_codex/generated/notification_registry.py
 @@ -45,6 +45,7 @@ from .v2_all import PlanDeltaNotification
  from .v2_all import ProcessExitedNotification
  from .v2_all import ProcessOutputDeltaNotification
@@ -15552,10 +15629,10 @@ index 2fbb5048f89dac89f482e037088a9f7484cc7915..a6be4d0d5984c245096d7e6327a9424b
      ReasoningSummaryPartAddedNotification,
      ReasoningSummaryTextDeltaNotification,
      ReasoningTextDeltaNotification,
-diff --git a/sdk/python/src/openai_codex/generated/v2_all.py b/sdk/python/src/openai_codex/generated/v2_all.py
-index 8049043af479c87184afebe0e4f4745c48eaa94a..d259baa92974f152b4615cf416e21b249d96bc76 100644
---- a/sdk/python/src/openai_codex/generated/v2_all.py
-+++ b/sdk/python/src/openai_codex/generated/v2_all.py
+diff --git c/sdk/python/src/openai_codex/generated/v2_all.py i/sdk/python/src/openai_codex/generated/v2_all.py
+index 8049043..d259baa 100644
+--- c/sdk/python/src/openai_codex/generated/v2_all.py
++++ i/sdk/python/src/openai_codex/generated/v2_all.py
 @@ -3691,6 +3691,19 @@ class ReasoningEffortOption(BaseModel):
      reasoning_effort: Annotated[ReasoningEffort, Field(alias="reasoningEffort")]
  

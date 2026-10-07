@@ -2,7 +2,7 @@
   "repository": "https://github.com/openai/codex",
   "commit": "ff6aec96948b70d94983af2641a6b67c94faeff5",
   "release": "rust-v0.159.2",
-  "patchSha256": "ca1805a57d2a742962bff4f80a2403eb127c76931b1e3b828515954914266fcb",
+  "patchSha256": "657e5cb4ff089a68be11089f7235081184198b09848d36353de9997a935651b7",
   "sourceArchiveSha256": "8cfd92ccc784603d0ef94165f5a70bb99fd3de6e8b4bccda58580fc3f5f4961d",
   "version": "0.159.2",
   "flavor": "astra-ares",
@@ -14,6 +14,11 @@
       "sha256": "4f9f3c0e3eabe9bee128946bb04cc9523423e82f9751880b7f03d41aa9e482f2",
       "executable": "codex-code-mode-host-aarch64-apple-darwin"
     },
+    "aarch64-pc-windows-msvc": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.159.2/codex-code-mode-host-aarch64-pc-windows-msvc.exe.tar.gz",
+      "sha256": "692cb07a7db15539fd7dc19befe0a89f3e636fc531b0786d80182c132571e047",
+      "executable": "codex-code-mode-host-aarch64-pc-windows-msvc.exe"
+    },
     "aarch64-unknown-linux-musl": {
       "url": "https://github.com/openai/codex/releases/download/rust-v0.159.2/codex-code-mode-host-aarch64-unknown-linux-musl.tar.gz",
       "sha256": "011967737e5eef730963dd63636e1006408ced43cbb3d6ca68c5c233998d6430",
@@ -23,6 +28,11 @@
       "url": "https://github.com/openai/codex/releases/download/rust-v0.159.2/codex-code-mode-host-x86_64-apple-darwin.tar.gz",
       "sha256": "cfe7d17004ecaaa7c7b9084d89746bc99e815ee4b39a1b5d686b430b6b067cc1",
       "executable": "codex-code-mode-host-x86_64-apple-darwin"
+    },
+    "x86_64-pc-windows-msvc": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.159.2/codex-code-mode-host-x86_64-pc-windows-msvc.exe.tar.gz",
+      "sha256": "9cc7e2bcbc94d639fdcd7931e17faeee44eb04ebb766afb51a04f3e5a0657eec",
+      "executable": "codex-code-mode-host-x86_64-pc-windows-msvc.exe"
     },
     "x86_64-unknown-linux-musl": {
       "url": "https://github.com/openai/codex/releases/download/rust-v0.159.2/codex-code-mode-host-x86_64-unknown-linux-musl.tar.gz",

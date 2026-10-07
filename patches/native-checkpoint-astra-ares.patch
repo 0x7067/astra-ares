@@ -1,7 +1,7 @@
-diff --git a/codex-rs/Cargo.lock b/codex-rs/Cargo.lock
-index a24fb43638d99d7769a4c2a82279f4bb01ef42b4..2017356cade389f75749f7b3f08e0e30095eb030 100644
---- a/codex-rs/Cargo.lock
-+++ b/codex-rs/Cargo.lock
+diff --git c/codex-rs/Cargo.lock i/codex-rs/Cargo.lock
+index a24fb43..2017356 100644
+--- c/codex-rs/Cargo.lock
++++ i/codex-rs/Cargo.lock
 @@ -268,7 +268,7 @@ checksum = "2a4385e2e34eb35d6b3efe798b9eb88096925d87726c0798709bf56d9ed84af3"
  
  [[package]]
@@ -1413,10 +1413,10 @@ index a24fb43638d99d7769a4c2a82279f4bb01ef42b4..2017356cade389f75749f7b3f08e0e30
  dependencies = [
   "anyhow",
   "assert_cmd",
-diff --git a/codex-rs/app-server-protocol/schema/json/ServerNotification.json b/codex-rs/app-server-protocol/schema/json/ServerNotification.json
-index 1e20ed648d1d41e8a26655ac4abb9f6eae60435e..48a3769fcf939e2639be4de7dd4af49223049b17 100644
---- a/codex-rs/app-server-protocol/schema/json/ServerNotification.json
-+++ b/codex-rs/app-server-protocol/schema/json/ServerNotification.json
+diff --git c/codex-rs/app-server-protocol/schema/json/ServerNotification.json i/codex-rs/app-server-protocol/schema/json/ServerNotification.json
+index 1e20ed6..48a3769 100644
+--- c/codex-rs/app-server-protocol/schema/json/ServerNotification.json
++++ i/codex-rs/app-server-protocol/schema/json/ServerNotification.json
 @@ -3597,6 +3597,49 @@
        "minLength": 1,
        "type": "string"
@@ -1494,10 +1494,10 @@ index 1e20ed648d1d41e8a26655ac4abb9f6eae60435e..48a3769fcf939e2639be4de7dd4af492
      {
        "properties": {
          "method": {
-diff --git a/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json b/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
-index 5a70f96f1ade7c59c7dfbf73ccba1706a6d651f8..0ef51cda26f21070377bd31a1b1369d96e8f453a 100644
---- a/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
-+++ b/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
+diff --git c/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json i/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
+index 5a70f96..0ef51cd 100644
+--- c/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
++++ i/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.schemas.json
 @@ -5825,6 +5825,26 @@
            "title": "ModelProvider/authRecoveryCompletedNotification",
            "type": "object"
@@ -1577,10 +1577,10 @@ index 5a70f96f1ade7c59c7dfbf73ccba1706a6d651f8..0ef51cda26f21070377bd31a1b1369d9
        "ReasoningItemContent": {
          "oneOf": [
            {
-diff --git a/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json b/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
-index 76c7ae81fc776d1f1965182d8d44c7ad79a14d59..fa8c89adb3001bca3f69f831e1fcd42a5f5386a8 100644
---- a/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
-+++ b/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
+diff --git c/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json i/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
+index 76c7ae8..fa8c89a 100644
+--- c/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
++++ i/codex-rs/app-server-protocol/schema/json/codex_app_server_protocol.v2.schemas.json
 @@ -14250,6 +14250,51 @@
        ],
        "type": "object"
@@ -1660,11 +1660,11 @@ index 76c7ae81fc776d1f1965182d8d44c7ad79a14d59..fa8c89adb3001bca3f69f831e1fcd42a
          {
            "properties": {
              "method": {
-diff --git a/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json b/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json
+diff --git c/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json i/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json
 new file mode 100644
-index 0000000000000000000000000000000000000000..e616e7af21684444bcbeb2130d21a8aad77e0b10
+index 0000000..e616e7a
 --- /dev/null
-+++ b/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json
++++ i/codex-rs/app-server-protocol/schema/json/v2/ReasoningEffortUpdatedNotification.json
 @@ -0,0 +1,45 @@
 +{
 +  "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1712,7 +1712,7 @@ index 0000000000000000000000000000000000000000..e616e7af21684444bcbeb2130d21a8aa
 +  "type": "object"
 +}
 \ No newline at end of file
-diff --git a/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-experimental.json.zst b/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-experimental.json.zst
+diff --git c/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-experimental.json.zst i/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-experimental.json.zst
 index 0a35c5522fa525a5c2d6a2138c244c9d5b88815d..7b5ae19e6adf6871604f2915354fcd83d43a0659 100644
 GIT binary patch
 delta 159098
@@ -7836,7 +7836,7 @@ z3fY8#_)u|P4z(d!K%oa@;JV1VAH*smU+PBF!b8T3MPf()e3$#@8wy(y(ezA|P=)_u
 zRAjWzjwoU!msCQk?aTH_$yc04NoiY#2gk9))`iSW?9dAA+2`3;2)Oq5sWq)$0}=-d
 AWdHyG
 
-diff --git a/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-stable.json.zst b/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-stable.json.zst
+diff --git c/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-stable.json.zst i/codex-rs/app-server-protocol/schema/precomputed/app-server-exports-stable.json.zst
 index f18fae87d11b9991099986ca4aa0205b123f3d29..0fa26be0c91615d6dd35bd348944a5174e9ecdec 100644
 GIT binary patch
 literal 156732
@@ -13856,10 +13856,10 @@ z8<i}JkJX`FpfaceAO=iV;sSEHGJok^9x8MAx+Qb?XBaI)gkZ{rCrrU4YRLpBnC8wV
 zHA^<{v(9QQJGwEjVVUM?M|4$DH+%vML7I}&6LS2;<^DIyRs!)_F$vGMBx1)Nsb4=L
 jP`Gx26&a>#Dqsrmtf$h5?1rysN8q9msJSJBqzh0U_%(CW
 
-diff --git a/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts b/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
-index 360f971862698d9f15b2e2838cfaacfec5c6ebb6..1fca50f3fde26e11276f53eee39f0a6966b81310 100644
---- a/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
-+++ b/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
+diff --git c/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts i/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
+index 360f971..1fca50f 100644
+--- c/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
++++ i/codex-rs/app-server-protocol/schema/typescript/ServerNotification.ts
 @@ -42,6 +42,7 @@ import type { ProcessOutputDeltaNotification } from "./v2/ProcessOutputDeltaNoti
  import type { ProjectChangedNotification } from "./v2/ProjectChangedNotification";
  import type { RawResponseCompletedNotification } from "./v2/RawResponseCompletedNotification";
@@ -13874,10 +13874,10 @@ index 360f971862698d9f15b2e2838cfaacfec5c6ebb6..1fca50f3fde26e11276f53eee39f0a69
   */
 -export type ServerNotification = { "method": "error", "params": ErrorNotification } | { "method": "thread/started", "params": ThreadStartedNotification } | { "method": "thread/status/changed", "params": ThreadStatusChangedNotification } | { "method": "thread/archived", "params": ThreadArchivedNotification } | { "method": "thread/deleted", "params": ThreadDeletedNotification } | { "method": "thread/unarchived", "params": ThreadUnarchivedNotification } | { "method": "thread/closed", "params": ThreadClosedNotification } | { "method": "thread/reverted", "params": ThreadRevertedNotification } | { "method": "skills/changed", "params": SkillsChangedNotification } | { "method": "thread/name/updated", "params": ThreadNameUpdatedNotification } | { "method": "thread/attachment/updated", "params": ThreadAttachmentUpdatedNotification } | { "method": "thread/goal/updated", "params": ThreadGoalUpdatedNotification } | { "method": "thread/goal/cleared", "params": ThreadGoalClearedNotification } | { "method": "thread/queue/changed", "params": ThreadQueueChangedNotification } | { "method": "project/changed", "params": ProjectChangedNotification } | { "method": "thread/project/updated", "params": ThreadProjectUpdatedNotification } | { "method": "thread/environment/connected", "params": EnvironmentConnectionNotification } | { "method": "thread/environment/disconnected", "params": EnvironmentConnectionNotification } | { "method": "thread/settings/updated", "params": ThreadSettingsUpdatedNotification } | { "method": "thread/tokenUsage/updated", "params": ThreadTokenUsageUpdatedNotification } | { "method": "turn/started", "params": TurnStartedNotification } | { "method": "hook/started", "params": HookStartedNotification } | { "method": "turn/completed", "params": TurnCompletedNotification } | { "method": "hook/completed", "params": HookCompletedNotification } | { "method": "turn/diff/updated", "params": TurnDiffUpdatedNotification } | { "method": "turn/plan/updated", "params": TurnPlanUpdatedNotification } | { "method": "item/started", "params": ItemStartedNotification } | { "method": "item/autoApprovalReview/started", "params": ItemGuardianApprovalReviewStartedNotification } | { "method": "item/autoApprovalReview/completed", "params": ItemGuardianApprovalReviewCompletedNotification } | { "method": "autoApprovalReview/strictReviewRequired", "params": StrictReviewRequiredNotification } | { "method": "item/completed", "params": ItemCompletedNotification } | { "method": "rawResponseItem/completed", "params": RawResponseItemCompletedNotification } | { "method": "rawResponse/completed", "params": RawResponseCompletedNotification } | { "method": "item/agentMessage/delta", "params": AgentMessageDeltaNotification } | { "method": "item/plan/delta", "params": PlanDeltaNotification } | { "method": "command/exec/outputDelta", "params": CommandExecOutputDeltaNotification } | { "method": "process/outputDelta", "params": ProcessOutputDeltaNotification } | { "method": "process/exited", "params": ProcessExitedNotification } | { "method": "item/commandExecution/outputDelta", "params": CommandExecutionOutputDeltaNotification } | { "method": "item/commandExecution/terminalInteraction", "params": TerminalInteractionNotification } | { "method": "item/fileChange/outputDelta", "params": FileChangeOutputDeltaNotification } | { "method": "item/fileChange/patchUpdated", "params": FileChangePatchUpdatedNotification } | { "method": "serverRequest/resolved", "params": ServerRequestResolvedNotification } | { "method": "item/mcpToolCall/progress", "params": McpToolCallProgressNotification } | { "method": "mcpServer/oauthLogin/completed", "params": McpServerOauthLoginCompletedNotification } | { "method": "mcpServer/startupStatus/updated", "params": McpServerStatusUpdatedNotification } | { "method": "mcpServer/event/stream/notification", "params": McpServerEventStreamNotification } | { "method": "account/updated", "params": AccountUpdatedNotification } | { "method": "account/gatewayOAuth/changed", "params": GatewayOAuthChangedNotification } | { "method": "account/rateLimits/updated", "params": AccountRateLimitsUpdatedNotification } | { "method": "app/list/updated", "params": AppListUpdatedNotification } | { "method": "remoteControl/status/changed", "params": RemoteControlStatusChangedNotification } | { "method": "externalAgentConfig/import/progress", "params": ExternalAgentConfigImportProgressNotification } | { "method": "externalAgentConfig/import/completed", "params": ExternalAgentConfigImportCompletedNotification } | { "method": "fs/changed", "params": FsChangedNotification } | { "method": "item/reasoning/summaryTextDelta", "params": ReasoningSummaryTextDeltaNotification } | { "method": "item/reasoning/summaryPartAdded", "params": ReasoningSummaryPartAddedNotification } | { "method": "item/reasoning/textDelta", "params": ReasoningTextDeltaNotification } | { "method": "thread/compacted", "params": ContextCompactedNotification } | { "method": "model/rerouted", "params": ModelReroutedNotification } | { "method": "model/verification", "params": ModelVerificationNotification } | { "method": "modelProvider/authRecoveryStarted", "params": AuthRecoveryNotification } | { "method": "modelProvider/authRecoveryCompleted", "params": AuthRecoveryNotification } | { "method": "turn/moderationMetadata", "params": TurnModerationMetadataNotification } | { "method": "model/safetyBuffering/updated", "params": ModelSafetyBufferingUpdatedNotification } | { "method": "warning", "params": WarningNotification } | { "method": "guardianWarning", "params": GuardianWarningNotification } | { "method": "deprecationNotice", "params": DeprecationNoticeNotification } | { "method": "configWarning", "params": ConfigWarningNotification } | { "method": "fuzzyFileSearch/sessionUpdated", "params": FuzzyFileSearchSessionUpdatedNotification } | { "method": "fuzzyFileSearch/sessionCompleted", "params": FuzzyFileSearchSessionCompletedNotification } | { "method": "thread/realtime/started", "params": ThreadRealtimeStartedNotification } | { "method": "thread/realtime/itemAdded", "params": ThreadRealtimeItemAddedNotification } | { "method": "thread/realtime/item/started", "params": ThreadRealtimeItemStartedNotification } | { "method": "thread/realtime/item/transcript/delta", "params": ThreadRealtimeItemTranscriptDeltaNotification } | { "method": "thread/realtime/item/completed", "params": ThreadRealtimeItemCompletedNotification } | { "method": "thread/realtime/transcript/delta", "params": ThreadRealtimeTranscriptDeltaNotification } | { "method": "thread/realtime/transcript/done", "params": ThreadRealtimeTranscriptDoneNotification } | { "method": "thread/realtime/outputAudio/delta", "params": ThreadRealtimeOutputAudioDeltaNotification } | { "method": "thread/realtime/sdp", "params": ThreadRealtimeSdpNotification } | { "method": "thread/realtime/error", "params": ThreadRealtimeErrorNotification } | { "method": "thread/realtime/closed", "params": ThreadRealtimeClosedNotification } | { "method": "windows/worldWritableWarning", "params": WindowsWorldWritableWarningNotification } | { "method": "windowsSandbox/setupCompleted", "params": WindowsSandboxSetupCompletedNotification } | { "method": "account/login/completed", "params": AccountLoginCompletedNotification };
 +export type ServerNotification = { "method": "error", "params": ErrorNotification } | { "method": "thread/started", "params": ThreadStartedNotification } | { "method": "thread/status/changed", "params": ThreadStatusChangedNotification } | { "method": "thread/archived", "params": ThreadArchivedNotification } | { "method": "thread/deleted", "params": ThreadDeletedNotification } | { "method": "thread/unarchived", "params": ThreadUnarchivedNotification } | { "method": "thread/closed", "params": ThreadClosedNotification } | { "method": "thread/reverted", "params": ThreadRevertedNotification } | { "method": "skills/changed", "params": SkillsChangedNotification } | { "method": "thread/name/updated", "params": ThreadNameUpdatedNotification } | { "method": "thread/attachment/updated", "params": ThreadAttachmentUpdatedNotification } | { "method": "thread/goal/updated", "params": ThreadGoalUpdatedNotification } | { "method": "thread/goal/cleared", "params": ThreadGoalClearedNotification } | { "method": "thread/queue/changed", "params": ThreadQueueChangedNotification } | { "method": "project/changed", "params": ProjectChangedNotification } | { "method": "thread/project/updated", "params": ThreadProjectUpdatedNotification } | { "method": "thread/environment/connected", "params": EnvironmentConnectionNotification } | { "method": "thread/environment/disconnected", "params": EnvironmentConnectionNotification } | { "method": "thread/settings/updated", "params": ThreadSettingsUpdatedNotification } | { "method": "thread/tokenUsage/updated", "params": ThreadTokenUsageUpdatedNotification } | { "method": "turn/started", "params": TurnStartedNotification } | { "method": "hook/started", "params": HookStartedNotification } | { "method": "turn/completed", "params": TurnCompletedNotification } | { "method": "hook/completed", "params": HookCompletedNotification } | { "method": "turn/diff/updated", "params": TurnDiffUpdatedNotification } | { "method": "turn/plan/updated", "params": TurnPlanUpdatedNotification } | { "method": "item/started", "params": ItemStartedNotification } | { "method": "item/autoApprovalReview/started", "params": ItemGuardianApprovalReviewStartedNotification } | { "method": "item/autoApprovalReview/completed", "params": ItemGuardianApprovalReviewCompletedNotification } | { "method": "autoApprovalReview/strictReviewRequired", "params": StrictReviewRequiredNotification } | { "method": "item/completed", "params": ItemCompletedNotification } | { "method": "rawResponseItem/completed", "params": RawResponseItemCompletedNotification } | { "method": "rawResponse/completed", "params": RawResponseCompletedNotification } | { "method": "item/agentMessage/delta", "params": AgentMessageDeltaNotification } | { "method": "item/plan/delta", "params": PlanDeltaNotification } | { "method": "command/exec/outputDelta", "params": CommandExecOutputDeltaNotification } | { "method": "process/outputDelta", "params": ProcessOutputDeltaNotification } | { "method": "process/exited", "params": ProcessExitedNotification } | { "method": "item/commandExecution/outputDelta", "params": CommandExecutionOutputDeltaNotification } | { "method": "item/commandExecution/terminalInteraction", "params": TerminalInteractionNotification } | { "method": "item/fileChange/outputDelta", "params": FileChangeOutputDeltaNotification } | { "method": "item/fileChange/patchUpdated", "params": FileChangePatchUpdatedNotification } | { "method": "serverRequest/resolved", "params": ServerRequestResolvedNotification } | { "method": "item/mcpToolCall/progress", "params": McpToolCallProgressNotification } | { "method": "mcpServer/oauthLogin/completed", "params": McpServerOauthLoginCompletedNotification } | { "method": "mcpServer/startupStatus/updated", "params": McpServerStatusUpdatedNotification } | { "method": "mcpServer/event/stream/notification", "params": McpServerEventStreamNotification } | { "method": "account/updated", "params": AccountUpdatedNotification } | { "method": "account/gatewayOAuth/changed", "params": GatewayOAuthChangedNotification } | { "method": "account/rateLimits/updated", "params": AccountRateLimitsUpdatedNotification } | { "method": "app/list/updated", "params": AppListUpdatedNotification } | { "method": "remoteControl/status/changed", "params": RemoteControlStatusChangedNotification } | { "method": "externalAgentConfig/import/progress", "params": ExternalAgentConfigImportProgressNotification } | { "method": "externalAgentConfig/import/completed", "params": ExternalAgentConfigImportCompletedNotification } | { "method": "fs/changed", "params": FsChangedNotification } | { "method": "item/reasoning/summaryTextDelta", "params": ReasoningSummaryTextDeltaNotification } | { "method": "item/reasoning/summaryPartAdded", "params": ReasoningSummaryPartAddedNotification } | { "method": "item/reasoning/textDelta", "params": ReasoningTextDeltaNotification } | { "method": "thread/compacted", "params": ContextCompactedNotification } | { "method": "model/rerouted", "params": ModelReroutedNotification } | { "method": "model/verification", "params": ModelVerificationNotification } | { "method": "modelProvider/authRecoveryStarted", "params": AuthRecoveryNotification } | { "method": "modelProvider/authRecoveryCompleted", "params": AuthRecoveryNotification } | { "method": "turn/reasoningEffort/updated", "params": ReasoningEffortUpdatedNotification } | { "method": "turn/moderationMetadata", "params": TurnModerationMetadataNotification } | { "method": "model/safetyBuffering/updated", "params": ModelSafetyBufferingUpdatedNotification } | { "method": "warning", "params": WarningNotification } | { "method": "guardianWarning", "params": GuardianWarningNotification } | { "method": "deprecationNotice", "params": DeprecationNoticeNotification } | { "method": "configWarning", "params": ConfigWarningNotification } | { "method": "fuzzyFileSearch/sessionUpdated", "params": FuzzyFileSearchSessionUpdatedNotification } | { "method": "fuzzyFileSearch/sessionCompleted", "params": FuzzyFileSearchSessionCompletedNotification } | { "method": "thread/realtime/started", "params": ThreadRealtimeStartedNotification } | { "method": "thread/realtime/itemAdded", "params": ThreadRealtimeItemAddedNotification } | { "method": "thread/realtime/item/started", "params": ThreadRealtimeItemStartedNotification } | { "method": "thread/realtime/item/transcript/delta", "params": ThreadRealtimeItemTranscriptDeltaNotification } | { "method": "thread/realtime/item/completed", "params": ThreadRealtimeItemCompletedNotification } | { "method": "thread/realtime/transcript/delta", "params": ThreadRealtimeTranscriptDeltaNotification } | { "method": "thread/realtime/transcript/done", "params": ThreadRealtimeTranscriptDoneNotification } | { "method": "thread/realtime/outputAudio/delta", "params": ThreadRealtimeOutputAudioDeltaNotification } | { "method": "thread/realtime/sdp", "params": ThreadRealtimeSdpNotification } | { "method": "thread/realtime/error", "params": ThreadRealtimeErrorNotification } | { "method": "thread/realtime/closed", "params": ThreadRealtimeClosedNotification } | { "method": "windows/worldWritableWarning", "params": WindowsWorldWritableWarningNotification } | { "method": "windowsSandbox/setupCompleted", "params": WindowsSandboxSetupCompletedNotification } | { "method": "account/login/completed", "params": AccountLoginCompletedNotification };
-diff --git a/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts b/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
-index 3c306f005ffc31ac6042d9be9ab68799dc7ab0d8..7992b6bb815d1d5b6d3836fee24138bc9564d1e1 100644
---- a/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
-+++ b/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
+diff --git c/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts i/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
+index 3c306f0..7992b6b 100644
+--- c/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
++++ i/codex-rs/app-server-protocol/schema/typescript/ServerNotificationEnvelope.ts
 @@ -42,6 +42,7 @@ import type { ProcessOutputDeltaNotification } from "./v2/ProcessOutputDeltaNoti
  import type { ProjectChangedNotification } from "./v2/ProjectChangedNotification";
  import type { RawResponseCompletedNotification } from "./v2/RawResponseCompletedNotification";
@@ -13892,21 +13892,21 @@ index 3c306f005ffc31ac6042d9be9ab68799dc7ab0d8..7992b6bb815d1d5b6d3836fee24138bc
   */
 -emittedAtMs?: number, } & ({ "method": "error", "params": ErrorNotification } | { "method": "thread/started", "params": ThreadStartedNotification } | { "method": "thread/status/changed", "params": ThreadStatusChangedNotification } | { "method": "thread/archived", "params": ThreadArchivedNotification } | { "method": "thread/deleted", "params": ThreadDeletedNotification } | { "method": "thread/unarchived", "params": ThreadUnarchivedNotification } | { "method": "thread/closed", "params": ThreadClosedNotification } | { "method": "thread/reverted", "params": ThreadRevertedNotification } | { "method": "skills/changed", "params": SkillsChangedNotification } | { "method": "thread/name/updated", "params": ThreadNameUpdatedNotification } | { "method": "thread/attachment/updated", "params": ThreadAttachmentUpdatedNotification } | { "method": "thread/goal/updated", "params": ThreadGoalUpdatedNotification } | { "method": "thread/goal/cleared", "params": ThreadGoalClearedNotification } | { "method": "thread/queue/changed", "params": ThreadQueueChangedNotification } | { "method": "project/changed", "params": ProjectChangedNotification } | { "method": "thread/project/updated", "params": ThreadProjectUpdatedNotification } | { "method": "thread/environment/connected", "params": EnvironmentConnectionNotification } | { "method": "thread/environment/disconnected", "params": EnvironmentConnectionNotification } | { "method": "thread/settings/updated", "params": ThreadSettingsUpdatedNotification } | { "method": "thread/tokenUsage/updated", "params": ThreadTokenUsageUpdatedNotification } | { "method": "turn/started", "params": TurnStartedNotification } | { "method": "hook/started", "params": HookStartedNotification } | { "method": "turn/completed", "params": TurnCompletedNotification } | { "method": "hook/completed", "params": HookCompletedNotification } | { "method": "turn/diff/updated", "params": TurnDiffUpdatedNotification } | { "method": "turn/plan/updated", "params": TurnPlanUpdatedNotification } | { "method": "item/started", "params": ItemStartedNotification } | { "method": "item/autoApprovalReview/started", "params": ItemGuardianApprovalReviewStartedNotification } | { "method": "item/autoApprovalReview/completed", "params": ItemGuardianApprovalReviewCompletedNotification } | { "method": "autoApprovalReview/strictReviewRequired", "params": StrictReviewRequiredNotification } | { "method": "item/completed", "params": ItemCompletedNotification } | { "method": "rawResponseItem/completed", "params": RawResponseItemCompletedNotification } | { "method": "rawResponse/completed", "params": RawResponseCompletedNotification } | { "method": "item/agentMessage/delta", "params": AgentMessageDeltaNotification } | { "method": "item/plan/delta", "params": PlanDeltaNotification } | { "method": "command/exec/outputDelta", "params": CommandExecOutputDeltaNotification } | { "method": "process/outputDelta", "params": ProcessOutputDeltaNotification } | { "method": "process/exited", "params": ProcessExitedNotification } | { "method": "item/commandExecution/outputDelta", "params": CommandExecutionOutputDeltaNotification } | { "method": "item/commandExecution/terminalInteraction", "params": TerminalInteractionNotification } | { "method": "item/fileChange/outputDelta", "params": FileChangeOutputDeltaNotification } | { "method": "item/fileChange/patchUpdated", "params": FileChangePatchUpdatedNotification } | { "method": "serverRequest/resolved", "params": ServerRequestResolvedNotification } | { "method": "item/mcpToolCall/progress", "params": McpToolCallProgressNotification } | { "method": "mcpServer/oauthLogin/completed", "params": McpServerOauthLoginCompletedNotification } | { "method": "mcpServer/startupStatus/updated", "params": McpServerStatusUpdatedNotification } | { "method": "mcpServer/event/stream/notification", "params": McpServerEventStreamNotification } | { "method": "account/updated", "params": AccountUpdatedNotification } | { "method": "account/gatewayOAuth/changed", "params": GatewayOAuthChangedNotification } | { "method": "account/rateLimits/updated", "params": AccountRateLimitsUpdatedNotification } | { "method": "app/list/updated", "params": AppListUpdatedNotification } | { "method": "remoteControl/status/changed", "params": RemoteControlStatusChangedNotification } | { "method": "externalAgentConfig/import/progress", "params": ExternalAgentConfigImportProgressNotification } | { "method": "externalAgentConfig/import/completed", "params": ExternalAgentConfigImportCompletedNotification } | { "method": "fs/changed", "params": FsChangedNotification } | { "method": "item/reasoning/summaryTextDelta", "params": ReasoningSummaryTextDeltaNotification } | { "method": "item/reasoning/summaryPartAdded", "params": ReasoningSummaryPartAddedNotification } | { "method": "item/reasoning/textDelta", "params": ReasoningTextDeltaNotification } | { "method": "thread/compacted", "params": ContextCompactedNotification } | { "method": "model/rerouted", "params": ModelReroutedNotification } | { "method": "model/verification", "params": ModelVerificationNotification } | { "method": "modelProvider/authRecoveryStarted", "params": AuthRecoveryNotification } | { "method": "modelProvider/authRecoveryCompleted", "params": AuthRecoveryNotification } | { "method": "turn/moderationMetadata", "params": TurnModerationMetadataNotification } | { "method": "model/safetyBuffering/updated", "params": ModelSafetyBufferingUpdatedNotification } | { "method": "warning", "params": WarningNotification } | { "method": "guardianWarning", "params": GuardianWarningNotification } | { "method": "deprecationNotice", "params": DeprecationNoticeNotification } | { "method": "configWarning", "params": ConfigWarningNotification } | { "method": "fuzzyFileSearch/sessionUpdated", "params": FuzzyFileSearchSessionUpdatedNotification } | { "method": "fuzzyFileSearch/sessionCompleted", "params": FuzzyFileSearchSessionCompletedNotification } | { "method": "thread/realtime/started", "params": ThreadRealtimeStartedNotification } | { "method": "thread/realtime/itemAdded", "params": ThreadRealtimeItemAddedNotification } | { "method": "thread/realtime/item/started", "params": ThreadRealtimeItemStartedNotification } | { "method": "thread/realtime/item/transcript/delta", "params": ThreadRealtimeItemTranscriptDeltaNotification } | { "method": "thread/realtime/item/completed", "params": ThreadRealtimeItemCompletedNotification } | { "method": "thread/realtime/transcript/delta", "params": ThreadRealtimeTranscriptDeltaNotification } | { "method": "thread/realtime/transcript/done", "params": ThreadRealtimeTranscriptDoneNotification } | { "method": "thread/realtime/outputAudio/delta", "params": ThreadRealtimeOutputAudioDeltaNotification } | { "method": "thread/realtime/sdp", "params": ThreadRealtimeSdpNotification } | { "method": "thread/realtime/error", "params": ThreadRealtimeErrorNotification } | { "method": "thread/realtime/closed", "params": ThreadRealtimeClosedNotification } | { "method": "windows/worldWritableWarning", "params": WindowsWorldWritableWarningNotification } | { "method": "windowsSandbox/setupCompleted", "params": WindowsSandboxSetupCompletedNotification } | { "method": "account/login/completed", "params": AccountLoginCompletedNotification });
 +emittedAtMs?: number, } & ({ "method": "error", "params": ErrorNotification } | { "method": "thread/started", "params": ThreadStartedNotification } | { "method": "thread/status/changed", "params": ThreadStatusChangedNotification } | { "method": "thread/archived", "params": ThreadArchivedNotification } | { "method": "thread/deleted", "params": ThreadDeletedNotification } | { "method": "thread/unarchived", "params": ThreadUnarchivedNotification } | { "method": "thread/closed", "params": ThreadClosedNotification } | { "method": "thread/reverted", "params": ThreadRevertedNotification } | { "method": "skills/changed", "params": SkillsChangedNotification } | { "method": "thread/name/updated", "params": ThreadNameUpdatedNotification } | { "method": "thread/attachment/updated", "params": ThreadAttachmentUpdatedNotification } | { "method": "thread/goal/updated", "params": ThreadGoalUpdatedNotification } | { "method": "thread/goal/cleared", "params": ThreadGoalClearedNotification } | { "method": "thread/queue/changed", "params": ThreadQueueChangedNotification } | { "method": "project/changed", "params": ProjectChangedNotification } | { "method": "thread/project/updated", "params": ThreadProjectUpdatedNotification } | { "method": "thread/environment/connected", "params": EnvironmentConnectionNotification } | { "method": "thread/environment/disconnected", "params": EnvironmentConnectionNotification } | { "method": "thread/settings/updated", "params": ThreadSettingsUpdatedNotification } | { "method": "thread/tokenUsage/updated", "params": ThreadTokenUsageUpdatedNotification } | { "method": "turn/started", "params": TurnStartedNotification } | { "method": "hook/started", "params": HookStartedNotification } | { "method": "turn/completed", "params": TurnCompletedNotification } | { "method": "hook/completed", "params": HookCompletedNotification } | { "method": "turn/diff/updated", "params": TurnDiffUpdatedNotification } | { "method": "turn/plan/updated", "params": TurnPlanUpdatedNotification } | { "method": "item/started", "params": ItemStartedNotification } | { "method": "item/autoApprovalReview/started", "params": ItemGuardianApprovalReviewStartedNotification } | { "method": "item/autoApprovalReview/completed", "params": ItemGuardianApprovalReviewCompletedNotification } | { "method": "autoApprovalReview/strictReviewRequired", "params": StrictReviewRequiredNotification } | { "method": "item/completed", "params": ItemCompletedNotification } | { "method": "rawResponseItem/completed", "params": RawResponseItemCompletedNotification } | { "method": "rawResponse/completed", "params": RawResponseCompletedNotification } | { "method": "item/agentMessage/delta", "params": AgentMessageDeltaNotification } | { "method": "item/plan/delta", "params": PlanDeltaNotification } | { "method": "command/exec/outputDelta", "params": CommandExecOutputDeltaNotification } | { "method": "process/outputDelta", "params": ProcessOutputDeltaNotification } | { "method": "process/exited", "params": ProcessExitedNotification } | { "method": "item/commandExecution/outputDelta", "params": CommandExecutionOutputDeltaNotification } | { "method": "item/commandExecution/terminalInteraction", "params": TerminalInteractionNotification } | { "method": "item/fileChange/outputDelta", "params": FileChangeOutputDeltaNotification } | { "method": "item/fileChange/patchUpdated", "params": FileChangePatchUpdatedNotification } | { "method": "serverRequest/resolved", "params": ServerRequestResolvedNotification } | { "method": "item/mcpToolCall/progress", "params": McpToolCallProgressNotification } | { "method": "mcpServer/oauthLogin/completed", "params": McpServerOauthLoginCompletedNotification } | { "method": "mcpServer/startupStatus/updated", "params": McpServerStatusUpdatedNotification } | { "method": "mcpServer/event/stream/notification", "params": McpServerEventStreamNotification } | { "method": "account/updated", "params": AccountUpdatedNotification } | { "method": "account/gatewayOAuth/changed", "params": GatewayOAuthChangedNotification } | { "method": "account/rateLimits/updated", "params": AccountRateLimitsUpdatedNotification } | { "method": "app/list/updated", "params": AppListUpdatedNotification } | { "method": "remoteControl/status/changed", "params": RemoteControlStatusChangedNotification } | { "method": "externalAgentConfig/import/progress", "params": ExternalAgentConfigImportProgressNotification } | { "method": "externalAgentConfig/import/completed", "params": ExternalAgentConfigImportCompletedNotification } | { "method": "fs/changed", "params": FsChangedNotification } | { "method": "item/reasoning/summaryTextDelta", "params": ReasoningSummaryTextDeltaNotification } | { "method": "item/reasoning/summaryPartAdded", "params": ReasoningSummaryPartAddedNotification } | { "method": "item/reasoning/textDelta", "params": ReasoningTextDeltaNotification } | { "method": "thread/compacted", "params": ContextCompactedNotification } | { "method": "model/rerouted", "params": ModelReroutedNotification } | { "method": "model/verification", "params": ModelVerificationNotification } | { "method": "modelProvider/authRecoveryStarted", "params": AuthRecoveryNotification } | { "method": "modelProvider/authRecoveryCompleted", "params": AuthRecoveryNotification } | { "method": "turn/reasoningEffort/updated", "params": ReasoningEffortUpdatedNotification } | { "method": "turn/moderationMetadata", "params": TurnModerationMetadataNotification } | { "method": "model/safetyBuffering/updated", "params": ModelSafetyBufferingUpdatedNotification } | { "method": "warning", "params": WarningNotification } | { "method": "guardianWarning", "params": GuardianWarningNotification } | { "method": "deprecationNotice", "params": DeprecationNoticeNotification } | { "method": "configWarning", "params": ConfigWarningNotification } | { "method": "fuzzyFileSearch/sessionUpdated", "params": FuzzyFileSearchSessionUpdatedNotification } | { "method": "fuzzyFileSearch/sessionCompleted", "params": FuzzyFileSearchSessionCompletedNotification } | { "method": "thread/realtime/started", "params": ThreadRealtimeStartedNotification } | { "method": "thread/realtime/itemAdded", "params": ThreadRealtimeItemAddedNotification } | { "method": "thread/realtime/item/started", "params": ThreadRealtimeItemStartedNotification } | { "method": "thread/realtime/item/transcript/delta", "params": ThreadRealtimeItemTranscriptDeltaNotification } | { "method": "thread/realtime/item/completed", "params": ThreadRealtimeItemCompletedNotification } | { "method": "thread/realtime/transcript/delta", "params": ThreadRealtimeTranscriptDeltaNotification } | { "method": "thread/realtime/transcript/done", "params": ThreadRealtimeTranscriptDoneNotification } | { "method": "thread/realtime/outputAudio/delta", "params": ThreadRealtimeOutputAudioDeltaNotification } | { "method": "thread/realtime/sdp", "params": ThreadRealtimeSdpNotification } | { "method": "thread/realtime/error", "params": ThreadRealtimeErrorNotification } | { "method": "thread/realtime/closed", "params": ThreadRealtimeClosedNotification } | { "method": "windows/worldWritableWarning", "params": WindowsWorldWritableWarningNotification } | { "method": "windowsSandbox/setupCompleted", "params": WindowsSandboxSetupCompletedNotification } | { "method": "account/login/completed", "params": AccountLoginCompletedNotification });
-diff --git a/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts b/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts
+diff --git c/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts i/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts
 new file mode 100644
-index 0000000000000000000000000000000000000000..853bb38087463f97c8608d3f661c2c3e45e71512
+index 0000000..853bb38
 --- /dev/null
-+++ b/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts
++++ i/codex-rs/app-server-protocol/schema/typescript/v2/ReasoningEffortUpdatedNotification.ts
 @@ -0,0 +1,5 @@
 +// GENERATED CODE! DO NOT MODIFY BY HAND!
 +
 +// This file was generated by [ts-rs](https://github.com/Aleph-Alpha/ts-rs). Do not edit this file manually.
 +
 +export type ReasoningEffortUpdatedNotification = { threadId: string, turnId: string, fromEffort: string | null, toEffort: string, step: number, leaseSteps: number, evaluatorMs: number, };
-diff --git a/codex-rs/app-server-protocol/schema/typescript/v2/index.ts b/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
-index d0c9fea6d0be6cf33e0bf1dc5d82096e532f4896..b9df987d6a2b3cb4d1b349fe77d6932959d40f42 100644
---- a/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
-+++ b/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
+diff --git c/codex-rs/app-server-protocol/schema/typescript/v2/index.ts i/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
+index d0c9fea..b9df987 100644
+--- c/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
++++ i/codex-rs/app-server-protocol/schema/typescript/v2/index.ts
 @@ -419,6 +419,7 @@ export type { RateLimitWindow } from "./RateLimitWindow";
  export type { RawResponseCompletedNotification } from "./RawResponseCompletedNotification";
  export type { RawResponseItemCompletedNotification } from "./RawResponseItemCompletedNotification";
@@ -13915,10 +13915,10 @@ index d0c9fea6d0be6cf33e0bf1dc5d82096e532f4896..b9df987d6a2b3cb4d1b349fe77d69329
  export type { ReasoningSummaryPartAddedNotification } from "./ReasoningSummaryPartAddedNotification";
  export type { ReasoningSummaryTextDeltaNotification } from "./ReasoningSummaryTextDeltaNotification";
  export type { ReasoningTextDeltaNotification } from "./ReasoningTextDeltaNotification";
-diff --git a/codex-rs/app-server-protocol/src/protocol/common.rs b/codex-rs/app-server-protocol/src/protocol/common.rs
-index c37c4956f1c3cbf21f293ca2aa41a6fec209bcfa..d2db345d9ea7e6e24acb27b5916099182841bb34 100644
---- a/codex-rs/app-server-protocol/src/protocol/common.rs
-+++ b/codex-rs/app-server-protocol/src/protocol/common.rs
+diff --git c/codex-rs/app-server-protocol/src/protocol/common.rs i/codex-rs/app-server-protocol/src/protocol/common.rs
+index c37c495..d2db345 100644
+--- c/codex-rs/app-server-protocol/src/protocol/common.rs
++++ i/codex-rs/app-server-protocol/src/protocol/common.rs
 @@ -1996,6 +1996,8 @@ server_notification_definitions! {
      ModelVerification => "model/verification" (v2::ModelVerificationNotification),
      AuthRecoveryStarted => "modelProvider/authRecoveryStarted" (v2::AuthRecoveryNotification),
@@ -13928,10 +13928,10 @@ index c37c4956f1c3cbf21f293ca2aa41a6fec209bcfa..d2db345d9ea7e6e24acb27b591609918
      #[experimental("turn/moderationMetadata")]
      TurnModerationMetadata => "turn/moderationMetadata" (v2::TurnModerationMetadataNotification),
      ModelSafetyBufferingUpdated => "model/safetyBuffering/updated" (v2::ModelSafetyBufferingUpdatedNotification),
-diff --git a/codex-rs/app-server-protocol/src/protocol/v2/notification.rs b/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
-index ca0e7753f3cb3c007e544b3507881b6cffeecacd..917c5f9aec5ecd0765224d5d4b2883ef14d8abaa 100644
---- a/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
-+++ b/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
+diff --git c/codex-rs/app-server-protocol/src/protocol/v2/notification.rs i/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
+index ca0e775..917c5f9 100644
+--- c/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
++++ i/codex-rs/app-server-protocol/src/protocol/v2/notification.rs
 @@ -5,6 +5,21 @@ use crate::TS;
  use serde::Deserialize;
  use serde::Serialize;
@@ -13954,10 +13954,10 @@ index ca0e7753f3cb3c007e544b3507881b6cffeecacd..917c5f9aec5ecd0765224d5d4b2883ef
  #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS)]
  #[serde(rename_all = "camelCase")]
  #[ts(export_to = "v2/")]
-diff --git a/codex-rs/app-server/src/bespoke_event_handling.rs b/codex-rs/app-server/src/bespoke_event_handling.rs
-index d1b0ab89756d38579d0d976ee72a5ee80cc216f2..1981b4803c8ba53c90a23c36f375b345188539ad 100644
---- a/codex-rs/app-server/src/bespoke_event_handling.rs
-+++ b/codex-rs/app-server/src/bespoke_event_handling.rs
+diff --git c/codex-rs/app-server/src/bespoke_event_handling.rs i/codex-rs/app-server/src/bespoke_event_handling.rs
+index d1b0ab8..1981b48 100644
+--- c/codex-rs/app-server/src/bespoke_event_handling.rs
++++ i/codex-rs/app-server/src/bespoke_event_handling.rs
 @@ -280,6 +280,21 @@ pub(crate) async fn apply_bespoke_event_handling(
                  .send_server_notification(ServerNotification::Warning(notification))
                  .await;
@@ -13980,10 +13980,10 @@ index d1b0ab89756d38579d0d976ee72a5ee80cc216f2..1981b4803c8ba53c90a23c36f375b345
          EventMsg::GuardianWarning(warning_event) => {
              let notification = GuardianWarningNotification {
                  thread_id: conversation_id.to_string(),
-diff --git a/codex-rs/app-server/src/notification_media.rs b/codex-rs/app-server/src/notification_media.rs
-index a3bb780b36dd73e5efd42dcae5319786a48f1806..8b0c3ea10c265c885a859f07ada61dc5ca9d4fb9 100644
---- a/codex-rs/app-server/src/notification_media.rs
-+++ b/codex-rs/app-server/src/notification_media.rs
+diff --git c/codex-rs/app-server/src/notification_media.rs i/codex-rs/app-server/src/notification_media.rs
+index a3bb780..8b0c3ea 100644
+--- c/codex-rs/app-server/src/notification_media.rs
++++ i/codex-rs/app-server/src/notification_media.rs
 @@ -113,6 +113,7 @@ pub(crate) fn without_notification_media(notification: ServerNotification) -> Se
          | ServerNotification::ModelVerification(_)
          | ServerNotification::AuthRecoveryStarted(_)
@@ -13992,11 +13992,63 @@ index a3bb780b36dd73e5efd42dcae5319786a48f1806..8b0c3ea10c265c885a859f07ada61dc5
          | ServerNotification::TurnModerationMetadata(_)
          | ServerNotification::ModelSafetyBufferingUpdated(_)
          | ServerNotification::Warning(_)
-diff --git a/codex-rs/core/src/session/decision_context.rs b/codex-rs/core/src/session/decision_context.rs
+diff --git c/codex-rs/core/src/config/edit.rs i/codex-rs/core/src/config/edit.rs
+index 9996db9..5e69ffd 100644
+--- c/codex-rs/core/src/config/edit.rs
++++ i/codex-rs/core/src/config/edit.rs
+@@ -622,6 +622,19 @@ impl ConfigDocument {
+         let mut current = self.doc.as_table_mut();
+ 
+         for (index, segment) in segments.iter().enumerate() {
++            // Keep a promoted inline table's comments outside the new header.
++            let inline_decor = current
++                .get(segment.as_str())
++                .and_then(TomlItem::as_inline_table)
++                .map(|inline| inline.decor().suffix().cloned());
++            let promoted_decor = if let Some(suffix) = inline_decor {
++                let mut key = current.key_mut(segment.as_str())?;
++                let prefix = key.leaf_decor().prefix().cloned();
++                key.leaf_decor_mut().clear();
++                Some((prefix, suffix))
++            } else {
++                None
++            };
+             match mode {
+                 TraversalMode::Create => {
+                     if !current.contains_key(segment.as_str()) {
+@@ -646,6 +659,14 @@ impl ConfigDocument {
+                     current = document_helpers::ensure_table_for_read(item)?;
+                 }
+             }
++            if let Some((prefix, suffix)) = promoted_decor {
++                if let Some(prefix) = prefix {
++                    current.decor_mut().set_prefix(prefix);
++                }
++                if let Some(suffix) = suffix {
++                    current.decor_mut().set_suffix(suffix);
++                }
++            }
+         }
+ 
+         Some(current)
+@@ -763,7 +784,11 @@ fn apply_blocking_to_resolved_file(
+         return Ok(());
+     }
+ 
+-    write_atomically(&write_paths.write_path, &document.doc.to_string()).with_context(|| {
++    let updated = document.doc.to_string();
++    updated
++        .parse::<DocumentMut>()
++        .context("Ares config editor rejected invalid TOML before writing")?;
++    write_atomically(&write_paths.write_path, &updated).with_context(|| {
+         format!(
+             "failed to persist config at {}",
+             write_paths.write_path.display()
+diff --git c/codex-rs/core/src/session/decision_context.rs i/codex-rs/core/src/session/decision_context.rs
 new file mode 100644
-index 0000000000000000000000000000000000000000..5246c521175d87a4ab67ce92f03c73b74aee3fbe
+index 0000000..5246c52
 --- /dev/null
-+++ b/codex-rs/core/src/session/decision_context.rs
++++ i/codex-rs/core/src/session/decision_context.rs
 @@ -0,0 +1,193 @@
 +//! Text visible to a supervisor: user input, published commentary/summaries, and
 +//! paired recent tools. Opaque reasoning and media never enter this projection.
@@ -14191,33 +14243,33 @@ index 0000000000000000000000000000000000000000..5246c521175d87a4ab67ce92f03c73b7
 +        omitted_older_tool_calls,
 +    }
 +}
-diff --git a/codex-rs/core/src/session/mod.rs b/codex-rs/core/src/session/mod.rs
-index 902d18377cb93e6bc378ebac9fc9b740cce65845..c6bdf78fee783ce2822b8a0401b9d7111b3e81d8 100644
---- a/codex-rs/core/src/session/mod.rs
-+++ b/codex-rs/core/src/session/mod.rs
+diff --git c/codex-rs/core/src/session/mod.rs i/codex-rs/core/src/session/mod.rs
+index 902d183..1a33a2e 100644
+--- c/codex-rs/core/src/session/mod.rs
++++ i/codex-rs/core/src/session/mod.rs
 @@ -230,6 +230,8 @@ use codex_protocol::exec_output::StreamOutput;
  mod code_mode_warning;
  pub(crate) mod context_window;
  mod daemon_recovery;
-+#[cfg(unix)]
++#[cfg(any(unix, windows))]
 +mod decision_context;
  mod environment;
  mod extension_interruption;
  pub(crate) mod extension_metrics;
-@@ -238,6 +240,8 @@ mod handlers;
+@@ -237,6 +239,8 @@ mod guardian_checkpoint;
+ mod handlers;
  mod inject;
  mod reasoning_effort;
- mod submission;
-+#[cfg(unix)]
++#[cfg(any(unix, windows))]
 +pub(crate) mod step_controller;
+ mod submission;
  pub(crate) use reasoning_effort::RequestEffortUsage;
  pub(crate) use submission::Submission;
- mod input_queue;
 @@ -2603,6 +2607,12 @@ impl Session {
          turn_context: &TurnContext,
          item: TurnItem,
      ) {
-+        #[cfg(unix)]
++        #[cfg(any(unix, windows))]
 +        if let TurnItem::CommandExecution(command) = &item
 +            && let Some(exit_code) = command.exit_code
 +        {
@@ -14226,12 +14278,12 @@ index 902d18377cb93e6bc378ebac9fc9b740cce65845..c6bdf78fee783ce2822b8a0401b9d711
          record_turn_ttfm_metric(turn_context, &item).await;
          for contributor in self.services.extensions.turn_lifecycle_contributors() {
              contributor
-diff --git a/codex-rs/core/src/session/step_controller.rs b/codex-rs/core/src/session/step_controller.rs
+diff --git c/codex-rs/core/src/session/step_controller.rs i/codex-rs/core/src/session/step_controller.rs
 new file mode 100644
-index 0000000000000000000000000000000000000000..7635fc0849ca4b3d4c5714fcfcac1ec5d26e49fa
+index 0000000..9754626
 --- /dev/null
-+++ b/codex-rs/core/src/session/step_controller.rs
-@@ -0,0 +1,343 @@
++++ i/codex-rs/core/src/session/step_controller.rs
+@@ -0,0 +1,366 @@
 +//! Opt-in evaluator bridge for every native CLI frontend. The bridge selects an
 +//! effort; core applies it through the same live settings path as app-server.
 +
@@ -14254,7 +14306,6 @@ index 0000000000000000000000000000000000000000..7635fc0849ca4b3d4c5714fcfcac1ec5
 +use serde::Serialize;
 +use tokio::io::AsyncReadExt;
 +use tokio::io::AsyncWriteExt;
-+use tokio::net::UnixStream;
 +
 +use super::decision_context::DecisionContext;
 +use super::decision_context::decision_context;
@@ -14262,8 +14313,32 @@ index 0000000000000000000000000000000000000000..7635fc0849ca4b3d4c5714fcfcac1ec5
 +use super::step_context::StepContext;
 +use super::turn_context::TurnContext;
 +
++#[cfg(unix)]
++type Connection = tokio::net::UnixStream;
++#[cfg(windows)]
++type Connection = tokio::net::windows::named_pipe::NamedPipeClient;
++
++#[cfg(unix)]
++async fn connect(path: std::ffi::OsString) -> std::io::Result<Connection> {
++    Connection::connect(path).await
++}
++
++// The bridge listens on a named pipe; retry while all its instances are busy.
++#[cfg(windows)]
++async fn connect(path: std::ffi::OsString) -> std::io::Result<Connection> {
++    const ERROR_PIPE_BUSY: i32 = 231;
++    loop {
++        match tokio::net::windows::named_pipe::ClientOptions::new().open(&path) {
++            Err(error) if error.raw_os_error() == Some(ERROR_PIPE_BUSY) => {
++                tokio::time::sleep(Duration::from_millis(50)).await;
++            }
++            result => return result,
++        }
++    }
++}
++
 +pub(super) struct StepController {
-+    connection: Option<UnixStream>,
++    connection: Option<Connection>,
 +    sequence: u64,
 +    failures: Arc<ToolFailureCounter>,
 +    original_prompt: String,
@@ -14441,7 +14516,7 @@ index 0000000000000000000000000000000000000000..7635fc0849ca4b3d4c5714fcfcac1ec5
 +            let socket = std::env::var_os("CODEX_STEP_CONTROLLER_SOCKET")
 +                .ok_or_else(|| failure("Jev requires its bridge. Launch astra-ares."))?;
 +            self.connection = Some(
-+                tokio::time::timeout(Duration::from_secs(5), UnixStream::connect(socket))
++                tokio::time::timeout(Duration::from_secs(5), connect(socket))
 +                    .await
 +                    .map_err(|_| failure("connection timeout"))?
 +                    .map_err(|error| failure(error.to_string()))?,
@@ -14575,15 +14650,15 @@ index 0000000000000000000000000000000000000000..7635fc0849ca4b3d4c5714fcfcac1ec5
 +        Ok(())
 +    }
 +}
-diff --git a/codex-rs/core/src/session/turn.rs b/codex-rs/core/src/session/turn.rs
-index b88b343c1df7e8c7bd0a3b9d34b747b0b03f4576..f7873afd4464aae99b5061a7628b0b556559b79c 100644
---- a/codex-rs/core/src/session/turn.rs
-+++ b/codex-rs/core/src/session/turn.rs
-@@ -420,6 +420,21 @@ pub(crate) async fn run_turn(
+diff --git c/codex-rs/core/src/session/turn.rs i/codex-rs/core/src/session/turn.rs
+index b88b343..3018278 100644
+--- c/codex-rs/core/src/session/turn.rs
++++ i/codex-rs/core/src/session/turn.rs
+@@ -420,6 +420,23 @@ pub(crate) async fn run_turn(
      // 2. After auto-compact, while a model/tool continuation is pending.
  
      let mut next_step_context = Some(first_step_context);
-+    #[cfg(not(unix))]
++    #[cfg(not(any(unix, windows)))]
 +    if codex_protocol::openai_models::jev_base_model(
 +        turn_context
 +            .next_step_settings
@@ -14593,19 +14668,21 @@ index b88b343c1df7e8c7bd0a3b9d34b747b0b03f4576..f7873afd4464aae99b5061a7628b0b55
 +    )
 +    .is_some()
 +    {
-+        return Err(CodexErr::Fatal("Jev requires a Unix platform".to_owned()));
++        return Err(CodexErr::Fatal(
++            "Jev requires a Unix or Windows platform".to_owned(),
++        ));
 +    }
-+    #[cfg(unix)]
++    #[cfg(any(unix, windows))]
 +    let mut step_controller =
 +        super::step_controller::StepController::new(&turn_context, &turn_user_input(&input));
      let mut guardian_budget_compacted = false;
      loop {
          // Note that pending_input would be something like a message the user
-@@ -457,6 +472,19 @@ pub(crate) async fn run_turn(
+@@ -457,6 +474,19 @@ pub(crate) async fn run_turn(
          .await;
  
          // Capture once so context, advertised tools, and tool calls share one request view.
-+        #[cfg(unix)]
++        #[cfg(any(unix, windows))]
 +        let applied_settings = {
 +            step_controller.accept_user_input(&turn_user_input(&pending_input));
 +            let applied = step_controller
@@ -14621,11 +14698,11 @@ index b88b343c1df7e8c7bd0a3b9d34b747b0b03f4576..f7873afd4464aae99b5061a7628b0b55
          let step_context = match next_step_context.take() {
              Some(step_context) if pending_input.is_empty() => step_context,
              None if pending_input.is_empty() => {
-@@ -494,6 +522,13 @@ pub(crate) async fn run_turn(
+@@ -494,6 +524,13 @@ pub(crate) async fn run_turn(
                  .await?
              }
          };
-+        #[cfg(unix)]
++        #[cfg(any(unix, windows))]
 +        if let Some(applied) = applied_settings {
 +            step_controller
 +                .confirm(&sess, &turn_context, &step_context, applied)
@@ -14635,7 +14712,7 @@ index b88b343c1df7e8c7bd0a3b9d34b747b0b03f4576..f7873afd4464aae99b5061a7628b0b55
          let sampling_request_result: CodexResult<_> = async {
              super::time_reminder::maybe_record_current_time_reminder(
                  sess.as_ref(),
-@@ -2087,6 +2122,7 @@ pub(super) fn realtime_text_for_event(msg: &EventMsg) -> Option<RealtimeEventTex
+@@ -2087,6 +2124,7 @@ pub(super) fn realtime_text_for_event(msg: &EventMsg) -> Option<RealtimeEventTex
          | EventMsg::Warning(_)
          | EventMsg::AuthRecoveryStarted(_)
          | EventMsg::AuthRecoveryCompleted(_)
@@ -14643,10 +14720,10 @@ index b88b343c1df7e8c7bd0a3b9d34b747b0b03f4576..f7873afd4464aae99b5061a7628b0b55
          | EventMsg::GuardianWarning(_)
          | EventMsg::RealtimeConversationStarted(_)
          | EventMsg::RealtimeConversationSdp(_)
-diff --git a/codex-rs/core/src/session/turn_context.rs b/codex-rs/core/src/session/turn_context.rs
-index 0d7b59d77ea6089bf4c157176a923a8069c1da62..5bc6ce42b3e52b9551cb1e21333e89317cf727eb 100644
---- a/codex-rs/core/src/session/turn_context.rs
-+++ b/codex-rs/core/src/session/turn_context.rs
+diff --git c/codex-rs/core/src/session/turn_context.rs i/codex-rs/core/src/session/turn_context.rs
+index 0d7b59d..5bc6ce4 100644
+--- c/codex-rs/core/src/session/turn_context.rs
++++ i/codex-rs/core/src/session/turn_context.rs
 @@ -792,10 +792,31 @@ impl TurnContext {
              ),
              network: self.turn_context_network_item(),
@@ -14681,15 +14758,15 @@ index 0d7b59d77ea6089bf4c157176a923a8069c1da62..5bc6ce42b3e52b9551cb1e21333e8931
              multi_agent_version: Some(self.multi_agent_version),
              multi_agent_mode: None,
              realtime_active: Some(self.realtime_active),
-diff --git a/codex-rs/core/src/tools/lifecycle.rs b/codex-rs/core/src/tools/lifecycle.rs
-index e26d83da6b7e23a88e2c0252703f6c5e5342ad00..7a2386fb929aaf861096579e1d36602955542413 100644
---- a/codex-rs/core/src/tools/lifecycle.rs
-+++ b/codex-rs/core/src/tools/lifecycle.rs
+diff --git c/codex-rs/core/src/tools/lifecycle.rs i/codex-rs/core/src/tools/lifecycle.rs
+index e26d83d..cac4f64 100644
+--- c/codex-rs/core/src/tools/lifecycle.rs
++++ i/codex-rs/core/src/tools/lifecycle.rs
 @@ -145,6 +145,21 @@ async fn notify_tool_finish_parts(
      source: ToolCallSource,
      outcome: ToolCallOutcome,
  ) {
-+    #[cfg(unix)]
++    #[cfg(any(unix, windows))]
 +    if let Some(counter) = turn
 +        .extension_data
 +        .get::<crate::session::step_controller::ToolFailureCounter>()
@@ -14707,10 +14784,10 @@ index e26d83da6b7e23a88e2c0252703f6c5e5342ad00..7a2386fb929aaf861096579e1d366029
      for contributor in session.services.extensions.tool_lifecycle_contributors() {
          contributor
              .on_tool_finish(ToolFinishInput {
-diff --git a/codex-rs/exec/src/event_processor_with_human_output.rs b/codex-rs/exec/src/event_processor_with_human_output.rs
-index 222bc485ab425ea4ad0bad8107cc5e2303bd20d9..93c6eba4d911cf6ef7f492a0a43bf2d17b51ef1d 100644
---- a/codex-rs/exec/src/event_processor_with_human_output.rs
-+++ b/codex-rs/exec/src/event_processor_with_human_output.rs
+diff --git c/codex-rs/exec/src/event_processor_with_human_output.rs i/codex-rs/exec/src/event_processor_with_human_output.rs
+index 222bc48..93c6eba 100644
+--- c/codex-rs/exec/src/event_processor_with_human_output.rs
++++ i/codex-rs/exec/src/event_processor_with_human_output.rs
 @@ -240,6 +240,17 @@ impl EventProcessor for EventProcessorWithHumanOutput {
                  CodexStatus::Running
              }
@@ -14729,10 +14806,10 @@ index 222bc485ab425ea4ad0bad8107cc5e2303bd20d9..93c6eba4d911cf6ef7f492a0a43bf2d1
              ServerNotification::AuthRecoveryStarted(notification) => {
                  eprintln!("{}", notification.message);
                  CodexStatus::Running
-diff --git a/codex-rs/exec/src/lib.rs b/codex-rs/exec/src/lib.rs
-index 0bfa07bd5587f6913b21d137874430a982824c15..7fe4bc8152fa84ce13f0142d77807b218bf462af 100644
---- a/codex-rs/exec/src/lib.rs
-+++ b/codex-rs/exec/src/lib.rs
+diff --git c/codex-rs/exec/src/lib.rs i/codex-rs/exec/src/lib.rs
+index 0bfa07b..7fe4bc8 100644
+--- c/codex-rs/exec/src/lib.rs
++++ i/codex-rs/exec/src/lib.rs
 @@ -1607,6 +1607,9 @@ fn should_process_notification(
          ServerNotification::Error(notification) => {
              notification.thread_id == thread_id && notification.turn_id == turn_id
@@ -14743,10 +14820,10 @@ index 0bfa07bd5587f6913b21d137874430a982824c15..7fe4bc8152fa84ce13f0142d77807b21
          ServerNotification::HookCompleted(notification) => {
              notification.thread_id == thread_id
                  && notification
-diff --git a/codex-rs/models-manager/src/manager.rs b/codex-rs/models-manager/src/manager.rs
-index 7b4d613be409bdd5cd60b7509c6e6c9c06dc41ae..b5b35cd7675d451311996872d854352a2384f6f0 100644
---- a/codex-rs/models-manager/src/manager.rs
-+++ b/codex-rs/models-manager/src/manager.rs
+diff --git c/codex-rs/models-manager/src/manager.rs i/codex-rs/models-manager/src/manager.rs
+index 7b4d613..b5b35cd 100644
+--- c/codex-rs/models-manager/src/manager.rs
++++ i/codex-rs/models-manager/src/manager.rs
 @@ -174,6 +174,22 @@ pub trait ModelsManager: fmt::Debug + Send + Sync {
              .is_some_and(AuthManager::current_auth_uses_codex_backend);
          presets = ModelPreset::filter_by_auth(presets, uses_codex_backend);
@@ -14778,10 +14855,10 @@ index 7b4d613be409bdd5cd60b7509c6e6c9c06dc41ae..b5b35cd7675d451311996872d854352a
      // First use the normal longest-prefix match. If that misses, allow a narrowly scoped
      // retry for namespaced slugs like `custom/gpt-5.3-codex`.
      let remote = find_model_by_longest_prefix(model, candidates)
-diff --git a/codex-rs/models-manager/src/manager_tests.rs b/codex-rs/models-manager/src/manager_tests.rs
-index 4ef297142abc8921828a2169bc25efda941b82ff..e42f4e23e6144f8a5957365656eaf4fd173d742e 100644
---- a/codex-rs/models-manager/src/manager_tests.rs
-+++ b/codex-rs/models-manager/src/manager_tests.rs
+diff --git c/codex-rs/models-manager/src/manager_tests.rs i/codex-rs/models-manager/src/manager_tests.rs
+index 4ef2971..e42f4e2 100644
+--- c/codex-rs/models-manager/src/manager_tests.rs
++++ i/codex-rs/models-manager/src/manager_tests.rs
 @@ -1623,3 +1623,44 @@ fn bundled_models_json_roundtrips() {
          "bundled models.json should contain at least one model"
      );
@@ -14827,10 +14904,10 @@ index 4ef297142abc8921828a2169bc25efda941b82ff..e42f4e23e6144f8a5957365656eaf4fd
 +        }));
 +    }
 +}
-diff --git a/codex-rs/protocol/src/openai_models.rs b/codex-rs/protocol/src/openai_models.rs
-index cb0c9f0a94693359dcfa3c004e024579d33cf08f..18fe9aa83611fce5400324eaf19ed371f9ec4804 100644
---- a/codex-rs/protocol/src/openai_models.rs
-+++ b/codex-rs/protocol/src/openai_models.rs
+diff --git c/codex-rs/protocol/src/openai_models.rs i/codex-rs/protocol/src/openai_models.rs
+index cb0c9f0..18fe9aa 100644
+--- c/codex-rs/protocol/src/openai_models.rs
++++ i/codex-rs/protocol/src/openai_models.rs
 @@ -53,6 +53,27 @@ pub use guardian_v2::GuardianV2TranscriptModelConfig;
  pub const MODEL_SPECIALTY_CYBER: &str = "cyber";
  pub const SPEED_TIER_FAST: &str = "fast";
@@ -14859,10 +14936,10 @@ index cb0c9f0a94693359dcfa3c004e024579d33cf08f..18fe9aa83611fce5400324eaf19ed371
  /// See https://platform.openai.com/docs/guides/reasoning?api-mode=responses#get-started-with-reasoning
  #[derive(Debug, Default, Clone, PartialEq, Eq, TS, Hash)]
  #[ts(type = "string")]
-diff --git a/codex-rs/protocol/src/protocol.rs b/codex-rs/protocol/src/protocol.rs
-index abc4e90847636bfe51e6275ede528a13616c8573..8930774ca4205919f49537ec975d4ae9b2177c89 100644
---- a/codex-rs/protocol/src/protocol.rs
-+++ b/codex-rs/protocol/src/protocol.rs
+diff --git c/codex-rs/protocol/src/protocol.rs i/codex-rs/protocol/src/protocol.rs
+index abc4e90..8930774 100644
+--- c/codex-rs/protocol/src/protocol.rs
++++ i/codex-rs/protocol/src/protocol.rs
 @@ -1363,6 +1363,9 @@ pub enum EventMsg {
      /// indicates the turn continued but the user should still be notified.
      Warning(WarningEvent),
@@ -14889,10 +14966,10 @@ index abc4e90847636bfe51e6275ede528a13616c8573..8930774ca4205919f49537ec975d4ae9
  /// User-facing progress for provider-owned authentication recovery.
  #[derive(Debug, Clone, Deserialize, Serialize, PartialEq, Eq, JsonSchema, TS)]
  pub struct AuthRecoveryEvent {
-diff --git a/codex-rs/rollout-trace/src/protocol_event.rs b/codex-rs/rollout-trace/src/protocol_event.rs
-index dadc4bb0acf9563cf2c39156ac129ac2fba5a4e0..68a93135ff5099a71a5254fe16f5eecc4f025fb8 100644
---- a/codex-rs/rollout-trace/src/protocol_event.rs
-+++ b/codex-rs/rollout-trace/src/protocol_event.rs
+diff --git c/codex-rs/rollout-trace/src/protocol_event.rs i/codex-rs/rollout-trace/src/protocol_event.rs
+index dadc4bb..68a9313 100644
+--- c/codex-rs/rollout-trace/src/protocol_event.rs
++++ i/codex-rs/rollout-trace/src/protocol_event.rs
 @@ -365,6 +365,7 @@ pub(crate) fn tool_runtime_trace_event(event: &EventMsg) -> Option<ToolRuntimeTr
          | EventMsg::Warning(_)
          | EventMsg::AuthRecoveryStarted(_)
@@ -14909,10 +14986,10 @@ index dadc4bb0acf9563cf2c39156ac129ac2fba5a4e0..68a93135ff5099a71a5254fe16f5eecc
          | EventMsg::GuardianWarning(_)
          | EventMsg::SafetyBuffering(_)
          | EventMsg::RealtimeConversationStarted(_)
-diff --git a/codex-rs/rollout/src/policy.rs b/codex-rs/rollout/src/policy.rs
-index c82b5ce958c81b10c57d829951bf8fdee7efef6e..f83da3dfd72c9ec4bbb73812e6e2047986b21e0c 100644
---- a/codex-rs/rollout/src/policy.rs
-+++ b/codex-rs/rollout/src/policy.rs
+diff --git c/codex-rs/rollout/src/policy.rs i/codex-rs/rollout/src/policy.rs
+index c82b5ce..f83da3d 100644
+--- c/codex-rs/rollout/src/policy.rs
++++ i/codex-rs/rollout/src/policy.rs
 @@ -154,6 +154,7 @@ pub fn should_persist_event_msg(ev: &EventMsg, history_mode: ThreadHistoryMode)
          | EventMsg::Warning(_)
          | EventMsg::AuthRecoveryStarted(_)
@@ -14921,10 +14998,10 @@ index c82b5ce958c81b10c57d829951bf8fdee7efef6e..f83da3dfd72c9ec4bbb73812e6e20479
          | EventMsg::GuardianWarning(_)
          | EventMsg::RealtimeConversationStarted(_)
          | EventMsg::RealtimeConversationSdp(_)
-diff --git a/codex-rs/tui/src/app/app_server_event_targets.rs b/codex-rs/tui/src/app/app_server_event_targets.rs
-index eb5ffa6ecfada238213f69eb385f139f9e2cebf3..7b653a7563f4180ab6eb6763ad89f46878a2f662 100644
---- a/codex-rs/tui/src/app/app_server_event_targets.rs
-+++ b/codex-rs/tui/src/app/app_server_event_targets.rs
+diff --git c/codex-rs/tui/src/app/app_server_event_targets.rs i/codex-rs/tui/src/app/app_server_event_targets.rs
+index eb5ffa6..7b653a7 100644
+--- c/codex-rs/tui/src/app/app_server_event_targets.rs
++++ i/codex-rs/tui/src/app/app_server_event_targets.rs
 @@ -183,6 +183,9 @@ pub(super) fn server_notification_thread_target(
              Some(notification.thread_id.as_str())
          }
@@ -14935,10 +15012,10 @@ index eb5ffa6ecfada238213f69eb385f139f9e2cebf3..7b653a7563f4180ab6eb6763ad89f468
          ServerNotification::GuardianWarning(notification) => Some(notification.thread_id.as_str()),
          ServerNotification::McpServerStatusUpdated(notification) => {
              match notification.thread_id.as_deref() {
-diff --git a/codex-rs/tui/src/app/event_dispatch.rs b/codex-rs/tui/src/app/event_dispatch.rs
-index 4a97366d419cb614894779073d4f6b800790254d..ef61c53635d125e54f9f384791136df19b14c3fc 100644
---- a/codex-rs/tui/src/app/event_dispatch.rs
-+++ b/codex-rs/tui/src/app/event_dispatch.rs
+diff --git c/codex-rs/tui/src/app/event_dispatch.rs i/codex-rs/tui/src/app/event_dispatch.rs
+index 4a97366..ef61c53 100644
+--- c/codex-rs/tui/src/app/event_dispatch.rs
++++ i/codex-rs/tui/src/app/event_dispatch.rs
 @@ -2109,7 +2109,7 @@ impl App {
                          .add_error_message(format!("Failed to save default model: {error}"));
                  } else {
@@ -14958,16 +15035,16 @@ index 4a97366d419cb614894779073d4f6b800790254d..ef61c53635d125e54f9f384791136df1
                          if let Some(label) = Self::reasoning_label_for(&model, effort.as_ref()) {
                              message.push(' ');
                              message.push_str(&label);
-diff --git a/codex-rs/tui/src/app/exit_summary.rs b/codex-rs/tui/src/app/exit_summary.rs
-index f9932ced06ea613e8aa534d8e1667912115cee6d..7060c6fc96aa00efc3abaf78b88286d70f3f0dc7 100644
---- a/codex-rs/tui/src/app/exit_summary.rs
-+++ b/codex-rs/tui/src/app/exit_summary.rs
+diff --git c/codex-rs/tui/src/app/exit_summary.rs i/codex-rs/tui/src/app/exit_summary.rs
+index f9932ce..d791427 100644
+--- c/codex-rs/tui/src/app/exit_summary.rs
++++ i/codex-rs/tui/src/app/exit_summary.rs
 @@ -80,6 +80,15 @@ impl App {
  impl AppExitInfo {
      /// Format the terminal summary for both the CLI and standalone TUI binaries.
      pub fn format_exit_messages(self, color_enabled: bool) -> Vec<String> {
 +        let program = if std::env::var_os("CODEX_STEP_CONTROLLER_SOCKET").is_some() {
-+            "codex-jev"
++            "astra-ares"
 +        } else {
 +            "codex"
 +        };
@@ -15001,11 +15078,11 @@ index f9932ced06ea613e8aa534d8e1667912115cee6d..7060c6fc96aa00efc3abaf78b88286d7
 +#[cfg(test)]
 +#[path = "exit_summary_jev_tests.rs"]
 +mod jev_tests;
-diff --git a/codex-rs/tui/src/app/exit_summary_jev_tests.rs b/codex-rs/tui/src/app/exit_summary_jev_tests.rs
+diff --git c/codex-rs/tui/src/app/exit_summary_jev_tests.rs i/codex-rs/tui/src/app/exit_summary_jev_tests.rs
 new file mode 100644
-index 0000000000000000000000000000000000000000..323a6f78ab38bf5ac19a6eaf9e38531293300ecd
+index 0000000..a86c972
 --- /dev/null
-+++ b/codex-rs/tui/src/app/exit_summary_jev_tests.rs
++++ i/codex-rs/tui/src/app/exit_summary_jev_tests.rs
 @@ -0,0 +1,22 @@
 +use super::*;
 +
@@ -15023,16 +15100,16 @@ index 0000000000000000000000000000000000000000..323a6f78ab38bf5ac19a6eaf9e385312
 +        update_action: None,
 +        exit_reason: ExitReason::UserRequested,
 +    };
-+    insta::assert_snapshot!(info.format_exit_messages_with_program(/*color_enabled*/ false, "codex-jev").join("\n"), @r"
++    insta::assert_snapshot!(info.format_exit_messages_with_program(/*color_enabled*/ false, "astra-ares").join("\n"), @r"
 +To continue this session, run:
-+  codex-jev resume 123e4567-e89b-12d3-a456-426614174000
-+Or run codex-jev resume and select My task.
++  astra-ares resume 123e4567-e89b-12d3-a456-426614174000
++Or run astra-ares resume and select My task.
 +");
 +}
-diff --git a/codex-rs/tui/src/chatwidget/model_popups.rs b/codex-rs/tui/src/chatwidget/model_popups.rs
-index 03efe3110aa142e6b98e286e38f4b7abdd7f1e79..3631eb808a822f8503e02142caedb6abc9ddc929 100644
---- a/codex-rs/tui/src/chatwidget/model_popups.rs
-+++ b/codex-rs/tui/src/chatwidget/model_popups.rs
+diff --git c/codex-rs/tui/src/chatwidget/model_popups.rs i/codex-rs/tui/src/chatwidget/model_popups.rs
+index 03efe31..3631eb8 100644
+--- c/codex-rs/tui/src/chatwidget/model_popups.rs
++++ i/codex-rs/tui/src/chatwidget/model_popups.rs
 @@ -255,7 +255,8 @@ impl ChatWidget {
                  _ => None,
              }
@@ -15054,10 +15131,10 @@ index 03efe3110aa142e6b98e286e38f4b7abdd7f1e79..3631eb808a822f8503e02142caedb6ab
          let default_effort = preset.default_reasoning_effort.clone();
          let supported = &preset.supported_reasoning_efforts;
          let in_plan_mode =
-diff --git a/codex-rs/tui/src/chatwidget/protocol.rs b/codex-rs/tui/src/chatwidget/protocol.rs
-index ba0d2e4061f0d8aa4227dd5288b322dd6ef07bf0..94b166cd4a2d4d7ae37a5282e4da5b4b6c524211 100644
---- a/codex-rs/tui/src/chatwidget/protocol.rs
-+++ b/codex-rs/tui/src/chatwidget/protocol.rs
+diff --git c/codex-rs/tui/src/chatwidget/protocol.rs i/codex-rs/tui/src/chatwidget/protocol.rs
+index ba0d2e4..94b166c 100644
+--- c/codex-rs/tui/src/chatwidget/protocol.rs
++++ i/codex-rs/tui/src/chatwidget/protocol.rs
 @@ -246,6 +246,41 @@ impl ChatWidget {
                      self.request_redraw();
                  }
@@ -15100,10 +15177,10 @@ index ba0d2e4061f0d8aa4227dd5288b322dd6ef07bf0..94b166cd4a2d4d7ae37a5282e4da5b4b
              ServerNotification::GuardianWarning(notification) => {
                  if !notification
                      .message
-diff --git a/codex-rs/tui/src/chatwidget/settings.rs b/codex-rs/tui/src/chatwidget/settings.rs
-index a9c2d1932d7e330c5bb51bab1e2031510d30fea5..a1441a448e06be73251011516fdb2b4671d5167a 100644
---- a/codex-rs/tui/src/chatwidget/settings.rs
-+++ b/codex-rs/tui/src/chatwidget/settings.rs
+diff --git c/codex-rs/tui/src/chatwidget/settings.rs i/codex-rs/tui/src/chatwidget/settings.rs
+index a9c2d19..a1441a4 100644
+--- c/codex-rs/tui/src/chatwidget/settings.rs
++++ i/codex-rs/tui/src/chatwidget/settings.rs
 @@ -671,7 +671,8 @@ impl ChatWidget {
          if previous_mode != next_mode
              && (previous_model != next_model || previous_effort != next_effort)
@@ -15114,11 +15191,11 @@ index a9c2d1932d7e330c5bb51bab1e2031510d30fea5..a1441a448e06be73251011516fdb2b46
              if !next_model.starts_with("codex-auto-") {
                  let reasoning_label = match next_effort.as_ref() {
                      None | Some(ReasoningEffortConfig::None) => "default",
-diff --git a/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap b/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap
+diff --git c/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap i/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap
 new file mode 100644
-index 0000000000000000000000000000000000000000..7184135a3892f8f10c5ab9587a4f61b99dada90a
+index 0000000..7184135
 --- /dev/null
-+++ b/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap
++++ i/codex-rs/tui/src/chatwidget/snapshots/codex_tui__chatwidget__tests__jev_model_selection.snap
 @@ -0,0 +1,10 @@
 +---
 +source: tui/src/chatwidget/tests/popups_and_settings.rs
@@ -15130,10 +15207,10 @@ index 0000000000000000000000000000000000000000..7184135a3892f8f10c5ab9587a4f61b9
 +› 1. Astra Ares  Astra with automatic effort from Jev
 +
 +  Press enter to confirm or esc to go back
-diff --git a/codex-rs/tui/src/chatwidget/tests/app_server.rs b/codex-rs/tui/src/chatwidget/tests/app_server.rs
-index e03e997d850205e7a380724f80cc240d2e00b614..87b3e380c2f486c81f890e7d74fd1ba90e510e49 100644
---- a/codex-rs/tui/src/chatwidget/tests/app_server.rs
-+++ b/codex-rs/tui/src/chatwidget/tests/app_server.rs
+diff --git c/codex-rs/tui/src/chatwidget/tests/app_server.rs i/codex-rs/tui/src/chatwidget/tests/app_server.rs
+index e03e997..87b3e38 100644
+--- c/codex-rs/tui/src/chatwidget/tests/app_server.rs
++++ i/codex-rs/tui/src/chatwidget/tests/app_server.rs
 @@ -2113,3 +2113,32 @@ async fn sqlite_log_write_warning_is_visible_in_warnings() {
          super::helpers::render_bottom_popup(&chat, /*width*/ 80)
      );
@@ -15167,10 +15244,10 @@ index e03e997d850205e7a380724f80cc240d2e00b614..87b3e380c2f486c81f890e7d74fd1ba9
 +     Step 3 · next 2 generation(s) · 321 ms
 +");
 +}
-diff --git a/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs b/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
-index 6b1a40176a7d4e55cbfb04111e5eb28831c14770..63cc83da0284d09f0750b743ab21cfd3a901918c 100644
---- a/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
-+++ b/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
+diff --git c/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs i/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
+index 6b1a401..63cc83d 100644
+--- c/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
++++ i/codex-rs/tui/src/chatwidget/tests/popups_and_settings.rs
 @@ -4367,3 +4367,38 @@ async fn account_change_dismisses_the_previous_app_directory_snapshot() {
          format!("Before account change:\n{before}\n\nAfter account change:\n{after}")
      );
@@ -15210,10 +15287,10 @@ index 6b1a40176a7d4e55cbfb04111e5eb28831c14770..63cc83da0284d09f0750b743ab21cfd3
 +        assert_eq!(crate::model_catalog::model_display_name(alias), name);
 +    }
 +}
-diff --git a/codex-rs/tui/src/model_catalog.rs b/codex-rs/tui/src/model_catalog.rs
-index abfac6dbc406f72927c5d278671c256bfca9ea3a..89d89e5a40a69880fc909d828af1af38797afb73 100644
---- a/codex-rs/tui/src/model_catalog.rs
-+++ b/codex-rs/tui/src/model_catalog.rs
+diff --git c/codex-rs/tui/src/model_catalog.rs i/codex-rs/tui/src/model_catalog.rs
+index abfac6d..89d89e5 100644
+--- c/codex-rs/tui/src/model_catalog.rs
++++ i/codex-rs/tui/src/model_catalog.rs
 @@ -11,7 +11,7 @@ pub(crate) fn model_display_name(model: &str) -> &str {
      if model.eq_ignore_ascii_case(LUNA_RESERVE_MODEL) {
          "Luna Reserve"
@@ -15223,10 +15300,10 @@ index abfac6dbc406f72927c5d278671c256bfca9ea3a..89d89e5a40a69880fc909d828af1af38
      }
  }
  
-diff --git a/sdk/python/src/openai_codex/generated/notification_registry.py b/sdk/python/src/openai_codex/generated/notification_registry.py
-index b30783706dae5ccb1d02198843b007d33ca6cb6f..9071b691d2bc525cb718e50fa1952a1b2058ebbd 100644
---- a/sdk/python/src/openai_codex/generated/notification_registry.py
-+++ b/sdk/python/src/openai_codex/generated/notification_registry.py
+diff --git c/sdk/python/src/openai_codex/generated/notification_registry.py i/sdk/python/src/openai_codex/generated/notification_registry.py
+index b307837..9071b69 100644
+--- c/sdk/python/src/openai_codex/generated/notification_registry.py
++++ i/sdk/python/src/openai_codex/generated/notification_registry.py
 @@ -46,6 +46,7 @@ from .v2_all import PlanDeltaNotification
  from .v2_all import ProcessExitedNotification
  from .v2_all import ProcessOutputDeltaNotification
@@ -15259,10 +15336,10 @@ index b30783706dae5ccb1d02198843b007d33ca6cb6f..9071b691d2bc525cb718e50fa1952a1b
      ReasoningSummaryPartAddedNotification,
      ReasoningSummaryTextDeltaNotification,
      ReasoningTextDeltaNotification,
-diff --git a/sdk/python/src/openai_codex/generated/v2_all.py b/sdk/python/src/openai_codex/generated/v2_all.py
-index 4d7d54aeb4b849e7446fce17c3c00a1cfdd09edc..2c46b0316dbc0d211b77905c0f26d98c635d1358 100644
---- a/sdk/python/src/openai_codex/generated/v2_all.py
-+++ b/sdk/python/src/openai_codex/generated/v2_all.py
+diff --git c/sdk/python/src/openai_codex/generated/v2_all.py i/sdk/python/src/openai_codex/generated/v2_all.py
+index 4d7d54a..2c46b03 100644
+--- c/sdk/python/src/openai_codex/generated/v2_all.py
++++ i/sdk/python/src/openai_codex/generated/v2_all.py
 @@ -3719,6 +3719,19 @@ class ReasoningEffortOption(BaseModel):
      reasoning_effort: Annotated[ReasoningEffort, Field(alias="reasoningEffort")]
  

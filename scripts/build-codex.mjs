@@ -15,8 +15,13 @@ import { exe } from "../src/config.mjs";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const hash = (file) =>
   createHash("sha256").update(readFileSync(file)).digest("hex");
-export function isCurrentManagedBuild(home, metaFile = "upstream-astra-ares.json") {
-  const meta = JSON.parse(readFileSync(join(root, "patches", metaFile), "utf8"));
+export function isCurrentManagedBuild(
+  home,
+  metaFile = "upstream-astra-ares.json",
+) {
+  const meta = JSON.parse(
+    readFileSync(join(root, "patches", metaFile), "utf8"),
+  );
   const file = join(home, `build-receipt-${meta.flavor ?? "astra-ares"}.json`);
   if (!existsSync(file)) return false;
   const receipt = JSON.parse(readFileSync(file, "utf8"));
@@ -52,7 +57,11 @@ export async function buildCodex(home, metaFile = "upstream-astra-ares.json") {
     readFileSync(join(root, "patches", metaFile), "utf8"),
   );
   const flavor = meta.flavor ?? "astra-ares";
-  const patch = join(root, "patches", meta.patch ?? "native-checkpoint.patch");
+  const patch = join(
+    root,
+    "patches",
+    meta.patch ?? "native-checkpoint-astra-ares.patch",
+  );
   if (hash(patch) !== meta.patchSha256)
     throw new Error("Codex patch checksum mismatch");
   const build = join(

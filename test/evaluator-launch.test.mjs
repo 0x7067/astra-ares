@@ -7,7 +7,29 @@ import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { exe } from "../src/config.mjs";
-import { launch } from "../src/launch.mjs";
+import { launch, verifyBinary } from "../src/launch.mjs";
+
+test("binary version must match the flavor whose markers are present", (t) => {
+  const dir = mkdtempSync(join(tmpdir(), "ares-binary-flavor-"));
+  const binary = join(dir, `codex${exe}`);
+  writeFileSync(
+    binary,
+    "CODEX_STEP_CONTROLLER_CONTEXT_V3 Jev requires its bridge Astra Ares Sol Ares",
+  );
+  try {
+    t.mock.method(
+      childProcess,
+      "execFileSync",
+      () => "codex-cli 0.156.0-alpha.5\n",
+    );
+    syncBuiltinESMExports();
+    assert.throws(() => verifyBinary(binary), /no compatible Jev checkpoint/);
+  } finally {
+    t.mock.restoreAll();
+    syncBuiltinESMExports();
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
 
 test("evaluator credentials stay out of the native Codex child environment", async (t) => {
   const dir = mkdtempSync(join(tmpdir(), "ares-child-env-"));
@@ -28,7 +50,7 @@ test("evaluator credentials stay out of the native Codex child environment", asy
     for (const name of variables) process.env[name] = "fixture-secret";
     t.mock.method(childProcess, "execFileSync", (_binary, args) => {
       assert.deepEqual(args, ["--version"]);
-      return "codex-cli 0.155.0-alpha.9.2\n";
+      return "codex-cli 0.156.0-alpha.5\n";
     });
     t.mock.method(childProcess, "spawn", (program, args, options) => {
       assert.equal(program, binary);

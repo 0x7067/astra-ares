@@ -19,12 +19,12 @@ Build or adopt the compatible native Codex, install Bun, then run:
 
 ```sh
 # macOS/Linux
-JEV_TEST_BINARY="$HOME/.local/share/astra-ares/bin/codex" npm run test:native
+JEV_TEST_BINARY="$HOME/.local/share/astra-ares/bin/astra-ares/codex" npm run test:native
 ```
 
 ```powershell
 # Windows PowerShell (default ARES_HOME)
-$env:JEV_TEST_BINARY = Join-Path $HOME '.local\share\astra-ares\bin\codex.exe'
+$env:JEV_TEST_BINARY = Join-Path $HOME '.local\share\astra-ares\bin\astra-ares\codex.exe'
 npm.cmd run test:native
 ```
 

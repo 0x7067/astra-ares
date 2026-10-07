@@ -15,7 +15,9 @@ export const DEFAULT_FLAVOR = "astra-ares";
 export function flavorMeta(flavor) {
   const file = FLAVOR_META_FILES[flavor];
   if (!file)
-    throw new Error("Unknown flavor " + flavor + ": use astra-ares or luna-ares");
+    throw new Error(
+      "Unknown flavor " + flavor + ": use astra-ares or luna-ares",
+    );
   return JSON.parse(readFileSync(join(root, "patches", file), "utf8"));
 }
 

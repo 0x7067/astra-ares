@@ -17,6 +17,7 @@ import {
   readDesktopReceipt,
 } from "../src/desktop.mjs";
 import { DESKTOP_FLAGS, withDesktopConfig } from "../src/desktop-config.mjs";
+import { binaryFor } from "../src/config.mjs";
 
 function fixture(t, options = {}) {
   const dir = mkdtempSync(join(tmpdir(), "ares-desktop-"));
@@ -152,6 +153,28 @@ test("desktop installation pins paths, survives a GUI environment and restores p
   assert(existsSync(f.env.ARES_CONFIG));
 });
 
+test("desktop installation selects the configured managed flavor", async (t) => {
+  const f = fixture(t);
+  writeFileSync(
+    f.env.ARES_CONFIG,
+    JSON.stringify({
+      provider: "local",
+      baseUrl: "http://127.0.0.1:8890",
+      decisionModel: "fixture",
+      contextTokenLimit: 7000,
+      flavor: "luna-ares",
+    }),
+  );
+  const binary = binaryFor(f.env.ARES_HOME, "luna-ares");
+  const manager = new DesktopIntegration({
+    ...f.settings,
+    verify: (path) => assert.equal(path, binary),
+  });
+  await manager.install();
+  assert.equal(readDesktopReceipt(manager.paths.state).binaryPath, binary);
+  await manager.uninstall();
+});
+
 test("uninstall preserves external changes and works after the Ares config is removed", async (t) => {
   const f = fixture(t, { env: {} });
   await f.manager.install();
@@ -238,7 +261,7 @@ test(
       f.binary,
       `#!${process.execPath}
 // CODEX_STEP_CONTROLLER_CONTEXT_V3 Jev requires its bridge Astra Ares Luna Ares Sol Ares
-if(process.argv.includes('--version')) console.log('codex-cli 0.155.0-alpha.9.2');
+if(process.argv.includes('--version')) console.log('codex-cli 0.156.0-alpha.5');
 else console.log(JSON.stringify({args:process.argv.slice(2),home:process.env.CODEX_HOME,socket:!!process.env.CODEX_STEP_CONTROLLER_SOCKET,key:process.env.ARES_LOCAL_API_KEY}));
 `,
       { mode: 0o700 },

@@ -84,6 +84,7 @@ Default: `~/.config/astra-ares/config.json`. `$XDG_CONFIG_HOME` is respected. An
 | `apiKeyEnv`         | Name of the environment variable containing the key                                                                             |
 | `apiKeyFile`        | Absolute path to a private file containing the key                                                                              |
 | `maxLeaseSteps`     | `1`, `2`, `5`, or `10`; the largest duration offered to Jev                                                                     |
+| `flavor`            | `astra-ares` (default) or `luna-ares`                                                                                           |
 | `codexBinary`       | Optional absolute path to a compatible patched Codex                                                                            |
 | `codexHome`         | Optional absolute path to the native Codex profile/history                                                                      |
 
@@ -91,13 +92,13 @@ Choose only one of `apiKey`, `apiKeyEnv`, and `apiKeyFile`. With none set, the p
 
 ## Paths and logs
 
-| Location               | Default / override                                 |
-| ---------------------- | -------------------------------------------------- |
-| Configuration          | `~/.config/astra-ares/config.json` / `ARES_CONFIG` |
-| Data, builds, and logs | `~/.local/share/astra-ares` / `ARES_HOME`          |
-| Native executable      | `<data>/bin/codex` (`codex.exe` on Windows)        |
-| Native history         | `<data>/codex-home`, unless `codexHome` is set     |
-| Decisions              | `<data>/runs/<run>/decisions.jsonl`                |
+| Location               | Default / override                                   |
+| ---------------------- | ---------------------------------------------------- |
+| Configuration          | `~/.config/astra-ares/config.json` / `ARES_CONFIG`   |
+| Data, builds, and logs | `~/.local/share/astra-ares` / `ARES_HOME`            |
+| Native executable      | `<data>/bin/<flavor>/codex` (`codex.exe` on Windows) |
+| Native history         | `<data>/codex-home`, unless `codexHome` is set       |
+| Decisions              | `<data>/runs/<run>/decisions.jsonl`                  |
 
 Decision logs contain request sizes, provider codes and request IDs, retry delays, usage, latency, and native application confirmations. They omit the API key and full task/history. Codex itself retains its normal native conversation history in its profile.
 

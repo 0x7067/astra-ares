@@ -10,9 +10,12 @@ import { join } from "node:path";
 
 test("managed setup only reuses a build of the current pinned patch", () => {
   const home = mkdtempSync(join(tmpdir(), "ares-build-receipt-"));
-  const file = join(home, "build-receipt.json");
+  const file = join(home, "build-receipt-astra-ares.json");
   const meta = JSON.parse(
-    readFileSync(new URL("../patches/upstream.json", import.meta.url), "utf8"),
+    readFileSync(
+      new URL("../patches/upstream-astra-ares.json", import.meta.url),
+      "utf8",
+    ),
   );
   try {
     assert.equal(isCurrentManagedBuild(home), false);
